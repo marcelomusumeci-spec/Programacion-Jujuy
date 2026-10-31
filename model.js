@@ -8,7 +8,12 @@ export function expected(task,date) {
  if(date>=task.end)return 100;
  return 100*workdays(task.start,date)/Math.max(1,workdays(task.start,task.end));
 }
-export function reportAt(task,state,date) {return state.reports.filter(r=>r.taskId===task.id&&r.date<=date).sort((a,b)=>b.date.localeCompare(a.date)||b.savedAt.localeCompare(a.savedAt))[0]||null;}
+export function reportAt(task,state,date) {
+ const local=state.reports.filter(r=>r.taskId===task.id&&r.date<=date);
+ const confirmed=task.confirmedReport;
+ if(confirmed&&confirmed.date<=date&&!local.some(r=>r.date===confirmed.date))local.push(confirmed);
+ return local.sort((a,b)=>b.date.localeCompare(a.date)||b.savedAt.localeCompare(a.savedAt))[0]||null;
+}
 export function activeRestrictions(task,state,date) {return state.restrictions.filter(r=>r.taskId===task.id&&r.opened<=date&&(!r.resolved||r.resolved>date));}
 export function inspect(task,state,date) {
  const report=reportAt(task,state,date),planned=expected(task,date),blocks=activeRestrictions(task,state,date);
@@ -28,7 +33,7 @@ export function summarize(tasks,state,date) {
 }
 export function validateState(s,tasks) {
  const ids=new Set(tasks.map(t=>t.id));const string=(v,max=4000)=>typeof v==='string'&&v.length<=max;
- if(!s||s.version!==1||s.project!=='jujuy-a0'||!Array.isArray(s.reports)||!Array.isArray(s.restrictions)||s.reports.length>50000||s.restrictions.length>20000)throw Error('El archivo no es una copia válida de Jujuy A0.');
+ if(!s||s.version!==1||s.project!=='jujuy-a0'||!Array.isArray(s.reports)||!Array.isArray(s.restrictions)||s.reports.length>50000||s.restrictions.length>20000)throw Error('El archivo no es una copia válida de Jujuy.');
  const seen=new Set();
  for(const r of s.reports){if(!r||!ids.has(r.taskId)||!validDate(r.date)||!Number.isFinite(r.progress)||r.progress<0||r.progress>100||!string(r.owner,160)||!string(r.note)||!string(r.savedAt,40)||Number.isNaN(Date.parse(r.savedAt)))throw Error('Hay un parte inválido en la copia.');const key=`${r.taskId}:${r.date}`;if(seen.has(key))throw Error('Hay partes duplicados para una misma fecha.');seen.add(key);}
  const keys=new Set();

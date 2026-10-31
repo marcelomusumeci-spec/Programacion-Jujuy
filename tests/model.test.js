@@ -1,16 +1,17 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {expected,inspect,summarize,emptyState,validateState,upsertReport,validDate,csvCell,workdays} from '../model.js';
+import {expected,inspect,summarize,emptyState,validateState,upsertReport,validDate,csvCell,workdays,reportAt} from '../model.js';
 const data=JSON.parse(readFileSync(new URL('../data/schedule.json',import.meta.url)));
+const original=JSON.parse(readFileSync(new URL('../data/schedule-a0.json',import.meta.url)));
 const tasks=data.tasks.filter(t=>['activity','milestone'].includes(t.kind));
 const t={id:1000,start:'2027-03-04',end:'2027-03-10',duration:5};
 const report=(date,progress)=>({taskId:1000,date,progress,owner:'Cuadrilla A',note:'Ejecutado',savedAt:'2027-03-10T12:00:00.000Z'});
 test('Documentos: 491 IDs completos, 453 actividades/hitos sin doble conteo',()=>{
  assert.equal(data.tasks.length,491);assert.deepEqual(data.tasks.map(t=>t.id),Array.from({length:491},(_,i)=>i));assert.equal(tasks.length,453);assert.equal(data.sources.length,9);
  for(const task of data.tasks){assert.ok(validDate(task.start));assert.ok(validDate(task.end));assert.ok(task.end>=task.start);assert.ok([1,2].includes(task.sourcePage));}
- assert.equal(data.tasks[391].start,'2027-06-14');assert.equal(data.tasks[391].duration,3);assert.equal(data.conflicts.length,3);
- assert.equal(data.tasks[490].end,'2028-01-27');
+ assert.equal(data.tasks[391].originalStart,'2027-06-14');assert.equal(data.tasks[391].duration,3);assert.equal(data.conflicts.length,3);
+ assert.equal(data.tasks[490].originalEnd,'2028-01-27');assert.equal(data.tasks[490].end,'2027-07-05');
 });
 test('Plan interpolado con fines de semana y límites inclusivos',()=>{
  assert.equal(workdays(t.start,t.end),5);assert.equal(expected(t,'2027-03-03'),0);assert.equal(expected(t,'2027-03-04'),20);assert.equal(expected(t,'2027-03-07'),40);assert.equal(expected(t,'2027-03-10'),100);assert.equal(expected(t,'2027-03-20'),100);
@@ -39,3 +40,28 @@ test('Restauración rechaza IDs ajenos, progreso inválido, duplicados y fechas 
  assert.throws(()=>validateState({...good,restrictions:[{id:'r',taskId:1000,opened:t.end,due:t.start,resolved:null,cause:'Bloqueo',owner:'Jefe',category:'Otro'}]},[t]));
 });
 test('CSV escapa comillas y neutraliza fórmulas de observaciones',()=>{assert.equal(csvCell('=1+1'),'"\'=1+1"');assert.equal(csvCell('a,"b"'),'"a,""b"""');});
+
+test('R1 lleva ambos bombeos al día real y conserva A0, duraciones y calendario',()=>{
+ assert.equal(data.revision,'r1');assert.equal(data.start,'2026-01-28');assert.equal(data.end,'2027-07-05');
+ assert.equal(data.reprogramming.generalShiftWorkdays,-148);assert.equal(data.reprogramming.n4ShiftWorkdays,-178);
+ for(const task of data.tasks){
+  const old=original.tasks.find(t=>t.id===task.id);
+  assert.equal(task.originalStart,old.start);assert.equal(task.originalEnd,old.end);assert.equal(task.duration,old.duration);assert.equal(task.baselineDuration,old.baselineDuration);
+  assert.equal(workdays(task.start,task.end),workdays(old.start,old.end));
+  const count=workdays(task.start,old.start)-1;assert.equal(count,-task.shiftWorkdays,task.code);
+  assert.equal(task.shiftWorkdays,(task.level==='N4'&&task.trade!=='Estructura y preliminares')||[172,170].includes(task.id)?-178:-148);
+ }
+ for(const id of [135,181]){const task=data.tasks.find(t=>t.id===id);assert.equal(task.start,'2026-10-30');assert.equal(task.end,'2026-10-30');assert.equal(inspect(task,emptyState(),'2026-10-30').status,'done');assert.equal(inspect(task,emptyState(),'2026-10-29').actual,null);}
+ assert.equal(tasks.filter(t=>t.confirmedReport).length,2);
+ const structure=data.tasks.filter(t=>t.id>=26&&t.id<=39);for(let i=1;i<structure.length;i++)assert.ok(structure[i].start>structure[i-1].end);
+ assert.ok(data.tasks.find(t=>t.id===173).start>data.tasks.find(t=>t.id===33).end);
+});
+test('R1 no desplaza ni reemplaza partes o restricciones locales y respeta respaldos anteriores',()=>{
+ const task=data.tasks.find(t=>t.id===135);
+ const local={...emptyState(),reports:[{taskId:135,date:'2026-10-30',progress:80,owner:'Jefatura',note:'Dato local a revisar',savedAt:'2026-10-31T15:00:00.000Z'}],restrictions:[{id:'r-original',taskId:135,opened:'2026-10-29',due:'2026-11-02',resolved:null,cause:'Prueba pendiente',owner:'Jefe',category:'Inspección'}]};
+ const before=JSON.stringify(local);const safe=validateState(local,tasks);
+ assert.equal(reportAt(task,safe,'2026-10-30').progress,80);assert.equal(inspect(task,safe,'2026-10-30').status,'blocked');assert.equal(JSON.stringify(local),before);
+ assert.equal(safe.restrictions[0].due,'2026-11-02');assert.equal(safe.reports[0].date,'2026-10-30');
+ assert.equal(reportAt(task,emptyState(),'2026-10-30').progress,100);
+ const other=tasks.find(t=>t.id===134);assert.equal(inspect(other,emptyState(),'2026-10-30').actual,null);
+});

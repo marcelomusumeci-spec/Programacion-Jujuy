@@ -4,9 +4,9 @@ Aplicación web adaptable a celular, tableta y escritorio. Semáforo por rubro, 
 
 ## Programación primero
 
-Leer [la programación y sus supuestos](docs/PROGRAMACION.md). Se transcribieron 491 registros de Niveles A0, con 453 actividades/hitos de producción. Inicio 24/08/2026, fin 27/01/2028. Se cotejaron 473 registros con Curva A0. La diferencia de fechas del ID 391 y las diferencias de etapas entre fichas están documentadas. [CSV completo](docs/programacion.csv).
+Leer [la programación y sus supuestos](docs/PROGRAMACION.md). Se transcribieron 491 registros de Niveles A0, con 453 actividades/hitos de producción. R1: inicio desplazado 28/01/2026, fin 05/07/2027. Referencia real: bombeos N3 y N4 realizados el 30/10/2026. A0 conservada por separado. Se cotejaron 473 registros con Curva A0. La diferencia de fechas del ID 391 y las diferencias de etapas entre fichas están documentadas. [CSV completo](docs/programacion.csv).
 
-No se inventaron partes reales, responsables, restricciones ni fechas de reprogramación. El usuario eligió cargar el seguimiento manualmente.
+El usuario confirmó los bombeos N3 y N4 al 100% el 30/10/2026 y solicitó desplazar la programación. Esos dos hitos se muestran como confirmados; el resto del seguimiento continúa con carga manual. Los partes y restricciones locales conservan sus fechas reales.
 
 ## Iniciar en el entorno
 
@@ -24,7 +24,7 @@ cd /workspace/Programacion-Jujuy
 npm test
 ```
 
-Ocho pruebas del cálculo y la integridad del plan. Las pruebas de navegador están en `tests/browser_smoke.py`: requieren Python Playwright y Chromium ya instalados, servidor activo y permiso de acceso a loopback. Ejecutar `python3 tests/browser_smoke.py`; opcionalmente indicar `JUJUY_TEST_URL`, `CHROMIUM_PATH` y `JUJUY_TEST_ARTIFACTS`. Usan perfiles temporales y no modifican partes de usuarios reales.
+Pruebas del cálculo, integridad del plan, desplazamiento R1 y conservación de partes. Las pruebas de navegador están en `tests/browser_smoke.py`: requieren Python Playwright y Chromium ya instalados, servidor activo y permiso de acceso a loopback. Ejecutar `python3 tests/browser_smoke.py`; opcionalmente indicar `JUJUY_TEST_URL`, `CHROMIUM_PATH` y `JUJUY_TEST_ARTIFACTS`. Usan perfiles temporales y no modifican partes de usuarios reales.
 
 ## Usar el tablero
 
@@ -37,7 +37,7 @@ Ocho pruebas del cálculo y la integridad del plan. Las pruebas de navegador est
 
 ## Celular y tableta
 
-La interfaz se verificó con Chromium en anchos de 320, 390, 768 y 1440 px. Para abrirla desde un teléfono físico e instalarla en pantalla de inicio, es necesario alojar los archivos estáticos en un sitio **HTTPS** accesible al dispositivo. Este trabajo no despliega, publica ni hace push a GitHub.
+La interfaz se verificó con Chromium en anchos de 320, 390, 768 y 1440 px. Para abrirla desde un teléfono físico e instalarla en pantalla de inicio, es necesario alojar los archivos estáticos en un sitio **HTTPS** accesible al dispositivo. La aplicación se aloja en https://marcelomusumeci-spec.github.io/Programacion-Jujuy/ con autorización del usuario.
 
 Una vez alojada, abrir el sitio desde el dispositivo y usar «Instalar aplicación» o «Añadir a pantalla de inicio». Después de la primera carga completa, la aplicación y el plan quedan disponibles offline mediante service worker. Los PDF originales no se precargan: descargarlos antes si se necesitan sin conexión. Una actualización que modifique archivos de la aplicación debe cambiar el identificador `CACHE` de `sw.js`.
 
@@ -51,7 +51,9 @@ No se calculan automáticamente predecesoras, ruta crítica, feriados, productiv
 
 - `index.html`, `app.js`, `styles.css`: interfaz.
 - `model.js`: calendario, cortes históricos, semáforo, validación y exportación.
-- `data/schedule.json`: plan, fuente/página por ID, discrepancias, textos de fichas y huellas de originales.
+- `data/schedule.json`: plan R1, fuente/página por ID, fechas A0 originales e hitos confirmados.
+- `data/schedule-a0.json`: plan A0 inalterado.
+- `scripts/reprogram.py`: generación repetible de R1 desde A0; no acumula desplazamientos.
 - `docs/`: PDF originales, programación y CSV.
 - `manifest.webmanifest`, `sw.js`, `icon-*`: aplicación instalable y caché offline.
 

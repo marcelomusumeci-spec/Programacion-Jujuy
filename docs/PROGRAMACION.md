@@ -1,67 +1,69 @@
-# Programación de control · Obra Jujuy
+# Reprogramación R1 · Obra Jujuy
 
-Programación documental para revisión de la jefatura de obra. Se conserva el plan de los PDF; no constituye una reprogramación aprobada ni acredita avance real.
+## Referencia real confirmada
 
-## Base y alcance
+El comitente confirmó expresamente que **los bombeos de contrapisos de los pisos 3 y 4 se realizaron ambos el 30/10/2026**. Los hitos ID 135 (N3-BOMBEO_) y 181 (N4-BOMBEO_) quedan en esa fecha y con 100% de ejecución confirmado. No se certifican otras tareas ni el resto de sus tandas.
 
-Se transcribieron las **491 filas (ID 0–490)** de «260831_112_JUJUY_PG - LB - Niveles A0.pdf»: 453 actividades/hitos de obra, 21 hitos de contratación y 17 resúmenes. Los 473 registros fechados extraídos de «Curva A0» se cotejaron por ID, inicio, fin y duración. Los siete documentos de instancias productivas se incorporan para consulta de alcance y aceptación. Los originales están en esta carpeta, con sus huellas SHA-256 en `data/schedule.json`.
+## Método y alcance
 
-El plan de control usa las columnas **Comienzo y Fin del documento Niveles**, sin desplazar fechas al día actual. Se retienen por separado duración, duración de línea base y variación de fin del PDF. No se reconstruyen fechas originales de línea base a partir de esas duraciones. La variación negativa del PDF representa una diferencia entre planes, no un atraso real de obra.
+Se conservan las 491 filas, sus IDs, niveles, rubros, alcances, duraciones y fuentes. La A0 no se altera: `data/schedule-a0.json`, `programacion-a0.csv`, `PROGRAMACION-A0.md` y los nueve PDF conservan los valores originales.
 
-Inicio general: **24/08/2026**. Fin general: **27/01/2028**. Estructura hasta **19/05/2027**. Arranque de albañilería N1: **04/03/2027** (hito previo 03/03/2027). Contrataciones: 24/08/2026–30/04/2027, consultables por separado y excluidas de los indicadores de producción.
+- **Referencia general N3:** del 26/05/2027 al 30/10/2026. Todas las fechas anteriores y posteriores se adelantan **148 días laborables**, salvo la secuencia N4 indicada abajo.
+- **Secuencia propia N4:** su bombeo original era el 07/07/2027. Para llevarlo también al 30/10/2026 se adelanta su secuencia de albañilería, instalaciones y terminaciones (IDs 173–213, más resumen ID 172) **178 días laborables**. Así se mantienen los intervalos de esa secuencia anteriores y posteriores al bombeo sin comprimir duraciones. La estructura N4 conserva el desplazamiento general para mantener el orden constructivo N1 → N8; queda finalizada el 26/06/2026, antes del inicio del frente N4 el 20/07/2026.
+- Calendario lunes–viernes, sin feriados, igual al supuesto de control de la aplicación. Las fechas se desplazan en días laborables y no en días corridos, para evitar colocar trabajos en fines de semana y alterar su duración laborable.
+- Los hitos de contratación, estructura, espacios comunes, medianeras y otros niveles reciben el desplazamiento general. No se afirma que esos hitos ya se hayan cumplido.
+- Hito de coordinación ID 170 «Bombeos N4-5-6»: se alinea a N4 (30/10/2026), como referencia de arranque de esa tanda; **no acredita que N5 y N6 estén bombeados**. El hito ID 169 mantiene su relación con el arranque N1 de su tanda. Los hitos por nivel conservan sus propias fechas.
+- El resumen de bombeos ID 168 abarca desde el primer hasta el último bombeo individual reprogramado. Su duración original se conserva como dato documental; no se interpreta como suma de jornadas productivas.
 
-## Frentes y entregas documentales
+Esta es una reprogramación por desplazamiento con dos anclas, **no un cálculo de red CPM**: los PDF no contienen la tabla de predecesoras, holguras, cuadrillas ni recursos. La coherencia interna de cada frente se conserva, pero la jefatura debe validar las relaciones entre frentes y la disponibilidad de cuadrillas. Por ejemplo, para conservar su secuencia y coincidir en el bombeo, N4 comienza sus actividades antes que N3; no se ha supuesto una cuadrilla compartida.
 
-| Frente | Inicio | Entrega/fin |
+## Fechas resultantes
+
+**Inicio del plan desplazado: 28/01/2026. Fin del plan desplazado: 05/07/2027.** Son fechas resultantes del desplazamiento solicitado, no fechas reales acreditadas ni un nuevo compromiso contractual.
+
+| Frente | Inicio R1 | Fin/entrega R1 |
 |---|---|---|
-| N1 | 04/03/2027 | 05/08/2027 |
-| N2 | 11/03/2027 | 12/08/2027 |
-| N3 | 18/03/2027 | 19/08/2027 |
-| N4 | 25/03/2027 | 30/09/2027 |
-| N5 | 01/04/2027 | 02/09/2027 |
-| N6 | 08/04/2027 | 09/09/2027 |
-| N7 | 15/04/2027 | 25/11/2027 |
-| N8 | 22/04/2027 | 23/09/2027 |
-| Azotea | 29/04/2027 | 13/10/2027 |
-| Medianeras | 10/06/2027 | 12/08/2027 |
-| Planta baja | 10/06/2027 | 27/01/2028 |
-| Palier y escaleras | 04/10/2027 | 27/01/2028 |
+| NIVEL 1 | 10/08/2026 | 11/01/2027 |
+| NIVEL 2 | 17/08/2026 | 18/01/2027 |
+| NIVEL 3 | 24/08/2026 | 25/01/2027 |
+| NIVEL 4 | 20/07/2026 | 25/01/2027 |
+| NIVEL 5 | 07/09/2026 | 08/02/2027 |
+| NIVEL 6 | 14/09/2026 | 15/02/2027 |
+| NIVEL 7 | 21/09/2026 | 03/05/2027 |
+| NIVEL 8 | 28/09/2026 | 01/03/2027 |
+| AZOTEA | 05/10/2026 | 19/03/2027 |
+| PALIER & ESCALERAS | 10/03/2027 | 05/07/2027 |
+| MEDIANERAS | 16/11/2026 | 18/01/2027 |
+| PLANTA BAJA | 16/11/2026 | 05/07/2027 |
 
-El escalonamiento inicial de N1–N8 es de cinco días laborables, pero el resto del plan **no se obtiene desplazando una semana cada piso**: N4 y N7 tienen interrupciones significativas. Se conservan sus fechas particulares. Las tareas y todos sus hitos se entregan en `programacion.csv` y en la vista Programación de la aplicación.
+El CSV `programacion.csv` incluye por ID inicio/fin R1, inicio/fin A0, desplazamiento laborable y duración documental. `scripts/reprogram.py` regenera R1 siempre desde la A0 original: ejecutarlo nuevamente no vuelve a adelantar fechas.
 
-## Secuencia de coordinación propuesta (validar en obra)
+## Conservación del seguimiento
 
-1. Estructura y liberación del frente; coordinación de cañerías eléctricas embebidas.
-2. Albañilería ET1 y ET2; recepción del piso por Dirección de Obra antes del ingreso de instalaciones (ficha ALB).
-3. Gas, sanitaria, electricidad, agua, climatización y radiadores según las fechas de cada ID. Pruebas y aprobaciones antes de tapados.
-4. Albañilería ET3, contrapisos, yesería y armados; verificar instalaciones antes del cierre.
-5. Impermeabilización y prueba hidráulica; revestimientos, aberturas, pintura y equipamiento.
-6. Pruebas finales, limpieza, checklist, correcciones y entrega con conformidad y documentación.
+Los partes y restricciones guardados por cada usuario permanecen intactos, con sus fechas reales, responsables y notas. No se desplazan fechas de partes, altas, compromisos ni resoluciones de restricciones. Al conservar el identificador de tarea y la clave de almacenamiento, los respaldos anteriores siguen siendo compatibles.
 
-Esta secuencia es una guía de liberación. Los PDF no aportan una tabla de predecesoras ni recursos; **no se calculan ruta crítica, holguras, capacidad de cuadrillas ni nuevas fechas comprometidas**. Un bloqueo registrado no desplaza automáticamente tareas dependientes: la jefatura debe evaluar el impacto.
+Los dos hitos confirmados se incorporan como referencia de ejecución al plan compartido, no escribiendo ni reemplazando partes privados. Sólo aparecen al consultar cortes desde el 30/10/2026. Un parte local para la misma actividad y fecha tiene prioridad; un parte posterior también se respeta. Los detalles indican su confirmación por separado del historial local.
 
-## Puntos a resolver antes de aprobar
+El resto de tareas sin parte seguirá figurando **Sin parte** aunque su nueva fecha de fin sea anterior al corte. No se presume un 100% de ejecución de las precedentes por haberse ejecutado el bombeo.
 
-- **ID 391, contrapiso de pendiente con carpeta de azotea:** Niveles indica 14–16/06/2027, 3 días; Curva indica 16–17/06/2027, 2 días. Se adopta provisionalmente Niveles y se muestra la discrepancia.
-- Los números de etapa no son equivalentes entre documentos: electricidad de UF Terminaciones ubica cableado en ET3, mientras la ficha ELEC lo ubica en ET4. Gas ET3 de la ficha refiere reguladores; no se asimila automáticamente a colocación de artefactos. EC-SANIT_ET3, EC-ALB_ET6 y EC-ELEC_ET6 no tienen equivalente directo en las fichas específicas (SANIT llega a ET2, ALB a ET5, ELEC a ET5). Consultar ficha y descripción antes de certificar.
-- Algunos checklist ocurren antes de la limpieza y de las últimas terminaciones (por ejemplo N1 checklist 22/07/2027 y limpieza 03–05/08/2027). Se requiere una verificación final de conformidad previa a entrega, según UF ENTREGA.
-- Planta baja: puesta a punto termina 29/10/2027 y entrega está fijada para 27/01/2028. Se conserva el intervalo sin atribuirle causa.
-- Azotea ID 395 exige desarrollar la programación según proyecto. No se considera que el alcance esté definido.
-- No hay calendario de feriados, partes reales, ponderaciones económicas, cantidades, responsables ni restricciones vigentes. Deben validarse en obra. No se inventan.
+## Criterios del semáforo
 
-## Método de seguimiento
+Avance esperado interpolado por días lunes–viernes inclusivos entre inicio y fin R1, sin feriados; hitos al 100% desde su fecha. El promedio se pondera por duración documental (hitos con peso 1); no es avance económico certificado. Se usa el último parte con fecha menor o igual al corte.
 
-Fecha de corte seleccionable. Avance esperado de una tarea = proporción de días lunes–viernes transcurridos entre inicio y fin, inclusivos (sin feriados); hitos = 100% desde su fecha. Antes de inicio = 0%. La interpolación es un supuesto operativo y no una curva certificable. El promedio general se pondera por la duración documental (hitos con peso 1), excluyendo resúmenes y contrataciones; no es avance físico/económico certificado.
+- Verde: avance conocido igual o superior al esperado; al 100%, Completado.
+- Rojo: avance conocido menor al esperado, con tolerancia de 0,5 puntos por redondeo.
+- Ámbar: restricción vigente al corte, con prioridad sobre el atraso.
+- Gris: sin parte o programado para el futuro. La ausencia de información no equivale a cero avance.
 
-Cada parte registra fecha, avance real 0–100%, responsable y nota. El corte utiliza el último parte con fecha menor o igual al corte; sin parte elegible se muestra **Sin parte**. No se interpreta falta de información como 0% ni como atraso. Se advierte cuando la fecha del último parte es anterior al corte. El progreso real global sólo se muestra cuando todas las tareas exigibles tienen parte; la cobertura se informa aparte. Las tareas futuras sin parte figuran como Programadas.
+## Observaciones originales que permanecen
 
-- **Verde · En plan:** parte disponible y avance real mayor o igual al esperado; una tarea al 100% figura Completada.
-- **Rojo · Atrasado:** parte disponible y avance real menor al esperado (tolerancia de redondeo 0,5 puntos porcentuales).
-- **Ámbar · Restringido:** existe una restricción vigente para la fecha de corte; prima sobre el atraso. Conserva visible el desvío.
-- **Gris · Sin parte / Programado:** información insuficiente o trabajo futuro.
+- ID 391: Niveles A0 indica 14–16/06/2027, 3 días, y Curva A0 16–17/06/2027, 2 días. R1 adopta las fechas de Niveles y las desplaza. La discrepancia original se conserva, sin mezclarla con el cambio R1.
+- Las etapas no tienen equivalencias automáticas entre fichas y cronograma, especialmente electricidad, gas y espacios comunes.
+- Los checklist anteriores a limpieza y terminaciones requieren verificación final antes de entrega; la separación temporal de PB entre puesta a punto y entrega se mantiene.
+- ID 395 de azotea sigue requiriendo desarrollar su alcance según proyecto.
 
-Un rubro se resume con prioridad Restringido → Atrasado → Sin parte → En plan → Programado; la falta de datos siempre aparece en su cobertura. Las restricciones tienen causa, categoría, responsable, fecha de alta, compromiso y resolución. Resolver no borra el historial. El filtro de próximas tres semanas incluye tareas en curso y las que comienzan dentro de 21 días.
+Ver `PROGRAMACION-A0.md` para la revisión documental completa y las fichas de origen. No se editan los PDF para hacerlos pasar por documentos R1.
 
-## Uso y resguardo
+## Actualización de la aplicación
 
-Carga manual, confirmada por el usuario. Los datos se guardan en el navegador de cada dispositivo; no hay sincronización automática ni cuentas. Exportar una copia JSON y restaurarla permite trasladar el seguimiento. La restauración valida el formato y reemplaza los datos sólo con confirmación. Se incluye exportación CSV del corte y CSV documental completo. Instalable/offline mediante PWA al servir por HTTPS; no se ha desplegado ni publicado.
+R1 actualiza las fechas visibles, el CSV de programación, el plan esperado y la caché offline. Al recibir una actualización aparece la opción «Actualizar R1»; guardar los partes abiertos antes de pulsarla. Si se mantiene una pestaña antigua, cerrar y volver a abrir la aplicación con conexión para recibir la revisión. Nunca borrar datos del sitio para actualizar: eso eliminaría los partes locales.

@@ -9,7 +9,15 @@ with sync_playwright() as p:
  context=browser.new_context(viewport={'width':1440,'height':1050},accept_downloads=True)
  page=context.new_page();errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
  page.goto(BASE);page.wait_for_selector('.trade-card');page.locator('#cutoff').fill('2026-10-31');page.locator('#cutoff').dispatch_event('change');page.screenshot(path=str(ARTIFACTS/'jujuy-desktop.png'),full_page=True)
- assert page.locator('.stat-card.missing strong').inner_text()=='06'
+ schedule=page.request.get(BASE.rstrip('/')+'/data/schedule.json?v=r1').json()
+ due=[t for t in schedule['tasks'] if t['kind'] in ['activity','milestone'] and t['start']<='2026-10-31']
+ missing=sum(not t.get('confirmedReport') for t in due)
+ assert int(page.locator('.stat-card.missing strong').inner_text())==missing
+ assert page.locator('.sidebar-bottom strong').inner_text()=='R1 · Base real 30/10/2026'
+ page.get_by_role('button',name='Programación',exact=True).click();page.locator('#search').fill('N3-BOMBEO_');assert page.locator('[data-task="135"] .badge').inner_text()=='Completado'
+ page.locator('#search').fill('N4-BOMBEO_');assert page.locator('[data-task="181"] .badge').inner_text()=='Completado'
+ page.locator('#cutoff').fill('2026-10-29');page.locator('#cutoff').dispatch_event('change');assert page.locator('[data-task="181"] .badge').inner_text()=='Programado'
+ page.locator('#search').fill('')
  page.locator('#cutoff').fill('2027-03-10');page.locator('#cutoff').dispatch_event('change')
  page.get_by_role('button',name='Programación',exact=True).click();page.locator('#search').fill('N1-ALB_ET1');page.locator('[data-task="43"]').click()
  f=page.locator('#report-form');f.locator('[name=progress]').fill('50');f.locator('[name=owner]').fill('Jefatura');f.locator('[name=note]').fill('Parte de prueba');f.get_by_role('button',name='Guardar parte',exact=True).click()
