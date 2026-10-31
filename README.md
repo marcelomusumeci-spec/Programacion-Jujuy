@@ -1,6 +1,6 @@
-# Jujuy · Control de obra
+# Oddino Arquitectura · Control de obra Jujuy
 
-Aplicación web adaptable a celular, tableta y escritorio. Semáforo por rubro, carga manual de avances por actividad/nivel, seguimiento histórico de restricciones y programación documental trazable a los nueve PDF.
+Aplicación web adaptable a celular, tableta y escritorio, con identidad de Oddino Arquitectura. Portada visual con semáforos grandes, atención priorizada, cobertura de partes y tarjetas de rubros. Los filtros y las referencias del plan se despliegan bajo “Filtros y referencia del plan”. Semáforo por rubro, carga manual de avances por actividad/nivel, seguimiento histórico de restricciones y programación documental trazable a los nueve PDF.
 
 ## Programación primero
 
@@ -24,7 +24,7 @@ cd /workspace/Programacion-Jujuy
 npm test
 ```
 
-Pruebas del cálculo, integridad del plan, desplazamiento R1 y conservación de partes. Las pruebas de navegador están en `tests/browser_smoke.py`: requieren Python Playwright y Chromium ya instalados, servidor activo y permiso de acceso a loopback. Ejecutar `python3 tests/browser_smoke.py`; opcionalmente indicar `JUJUY_TEST_URL`, `CHROMIUM_PATH` y `JUJUY_TEST_ARTIFACTS`. Usan perfiles temporales y no modifican partes de usuarios reales.
+Pruebas del cálculo, integridad del plan, desplazamiento R1 y conservación de partes. Las pruebas de navegador están en `tests/browser_smoke.py`, `tests/home_smoke.py` (portada visual) y `tests/update_smoke.py` (actualización conservando partes): requieren Python Playwright y Chromium ya instalados, servidor activo y permiso de acceso a loopback. Ejecutar `python3 tests/browser_smoke.py`; opcionalmente indicar `JUJUY_TEST_URL`, `CHROMIUM_PATH` y `JUJUY_TEST_ARTIFACTS`. Usan perfiles temporales y no modifican partes de usuarios reales.
 
 ## Usar el tablero
 
@@ -50,6 +50,7 @@ No se calculan automáticamente predecesoras, ruta crítica, feriados, productiv
 ## Archivos
 
 - `index.html`, `app.js`, `styles.css`: interfaz.
+- `assets/oddino-logo.svg`: logo original de la web oficial; fuente documentada en `assets/README.md`.
 - `model.js`: calendario, cortes históricos, semáforo, validación y exportación.
 - `data/schedule.json`: plan R1, fuente/página por ID, fechas A0 originales e hitos confirmados.
 - `data/schedule-a0.json`: plan A0 inalterado.

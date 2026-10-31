@@ -29,11 +29,11 @@ with TemporaryDirectory(prefix='jujuy-update-') as temp:
             page.wait_for_timeout(500)
             assert page.evaluate('JSON.parse(localStorage.getItem("jujuy-control-v1"))')==part
             assert page.evaluate("fetch('data/schedule.json?v=r1').then(r=>r.json()).then(d=>d.revision)")=='r1'
-            assert page.evaluate("caches.keys()") == ['jujuy-app-r1']
+            assert page.evaluate("caches.keys()") == ['jujuy-app-oddino-v1']
             context.set_offline(True);page.reload();page.wait_for_selector('.trade-card')
             assert page.locator('.sidebar-bottom strong').inner_text()=='R1 · Base real 30/10/2026'
             assert page.evaluate('JSON.parse(localStorage.getItem("jujuy-control-v1"))')==part
             assert not errors,errors
             browser.close()
-            print('PASS: actualización A0 → R1 en celular, partes intactos y R1 disponible offline.')
+            print('PASS: actualización A0 → R1 en celular, partes intactos y portada Oddino disponible offline.')
     finally:server.shutdown();server.server_close()
