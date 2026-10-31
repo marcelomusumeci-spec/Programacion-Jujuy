@@ -1,0 +1,10 @@
+{
+  "name": "jujuy-control-obra",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "python3 scripts/serve.py",
+    "test": "node tests/model.test.js"
+  }
+}
