@@ -2,11 +2,11 @@ export const labels = {plan:'En plan',late:'Atrasado',blocked:'Restringido',miss
 export const emptyState = () => ({version:1,project:'jujuy-a0',reports:[],restrictions:[]});
 export function validDate(s) {return typeof s==='string' && /^\d{4}-\d{2}-\d{2}$/.test(s) && !Number.isNaN(Date.parse(s+'T12:00:00Z')) && new Date(s+'T12:00:00Z').toISOString().slice(0,10)===s;}
 export function addDays(date,n) {const d=new Date(date+'T12:00:00Z');d.setUTCDate(d.getUTCDate()+n);return d.toISOString().slice(0,10);}
-export function workdays(start,end) {if(end<start)return 0;let n=0;for(let d=start;d<=end;d=addDays(d,1)){const day=new Date(d+'T12:00:00Z').getUTCDay();if(day!==0&&day!==6)n++;}return n;}
+export function workdays(start,end,calendar={}) {if(end<start)return 0;let n=0;for(let d=start;d<=end;d=addDays(d,1)){const day=new Date(d+'T12:00:00Z').getUTCDay();if((calendar.workingWeekdays||[1,2,3,4,5]).includes(day)&&!(calendar.excludedRanges||[]).some(r=>r.start<=d&&d<=r.end))n++;}return n;}
 export function expected(task,date) {
  if(date<task.start)return 0;
  if(date>=task.end)return 100;
- return 100*workdays(task.start,date)/Math.max(1,workdays(task.start,task.end));
+ return 100*workdays(task.start,date,task.calendar)/Math.max(1,workdays(task.start,task.end,task.calendar));
 }
 export function reportAt(task,state,date) {
  const local=state.reports.filter(r=>r.taskId===task.id&&r.date<=date);

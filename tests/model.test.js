@@ -4,14 +4,15 @@ import {readFileSync} from 'node:fs';
 import {expected,inspect,summarize,emptyState,validateState,upsertReport,validDate,csvCell,workdays,reportAt} from '../model.js';
 const data=JSON.parse(readFileSync(new URL('../data/schedule.json',import.meta.url)));
 const original=JSON.parse(readFileSync(new URL('../data/schedule-a0.json',import.meta.url)));
-const tasks=data.tasks.filter(t=>['activity','milestone'].includes(t.kind));
+const r1=JSON.parse(readFileSync(new URL('../data/schedule-r1.json',import.meta.url)));
+const tasks=data.tasks.filter(t=>t.active&&['activity','milestone'].includes(t.kind));
 const t={id:1000,start:'2027-03-04',end:'2027-03-10',duration:5};
 const report=(date,progress)=>({taskId:1000,date,progress,owner:'Cuadrilla A',note:'Ejecutado',savedAt:'2027-03-10T12:00:00.000Z'});
-test('Documentos: 491 IDs completos, 453 actividades/hitos sin doble conteo',()=>{
- assert.equal(data.tasks.length,491);assert.deepEqual(data.tasks.map(t=>t.id),Array.from({length:491},(_,i)=>i));assert.equal(tasks.length,453);assert.equal(data.sources.length,9);
- for(const task of data.tasks){assert.ok(validDate(task.start));assert.ok(validDate(task.end));assert.ok(task.end>=task.start);assert.ok([1,2].includes(task.sourcePage));}
- assert.equal(data.tasks[391].originalStart,'2027-06-14');assert.equal(data.tasks[391].duration,3);assert.equal(data.conflicts.length,3);
- assert.equal(data.tasks[490].originalEnd,'2028-01-27');assert.equal(data.tasks[490].end,'2027-07-05');
+test('R2: 395 actividades activas, 491 antecedentes y 10 IDs nuevos compatibles',()=>{
+ assert.equal(original.tasks.length,491);assert.equal(data.tasks.length,501);assert.equal(new Set(data.tasks.map(t=>t.id)).size,501);assert.equal(tasks.length,395);assert.equal(data.sources.length,10);
+ for(const task of data.tasks){assert.ok(validDate(task.start));assert.ok(validDate(task.end));assert.ok(task.end>=task.start);assert.ok(task.sourcePage>=1&&task.sourcePage<=40);}
+ assert.equal(data.tasks.find(t=>t.id===391).start,'2027-02-12');assert.equal(data.tasks.find(t=>t.id===490).end,'2027-10-13');
+ assert.equal(data.tasks.filter(t=>t.active===false).length,106);
 });
 test('Plan interpolado con fines de semana y límites inclusivos',()=>{
  assert.equal(workdays(t.start,t.end),5);assert.equal(expected(t,'2027-03-03'),0);assert.equal(expected(t,'2027-03-04'),20);assert.equal(expected(t,'2027-03-07'),40);assert.equal(expected(t,'2027-03-10'),100);assert.equal(expected(t,'2027-03-20'),100);
@@ -41,7 +42,8 @@ test('Restauración rechaza IDs ajenos, progreso inválido, duplicados y fechas 
 });
 test('CSV escapa comillas y neutraliza fórmulas de observaciones',()=>{assert.equal(csvCell('=1+1'),'"\'=1+1"');assert.equal(csvCell('a,"b"'),'"a,""b"""');});
 
-test('R1 lleva ambos bombeos al día real y conserva A0, duraciones y calendario',()=>{
+test('Histórico R1 conserva las anclas y el desplazamiento original',()=>{
+ const data=r1,tasks=r1.tasks.filter(t=>['activity','milestone'].includes(t.kind));
  assert.equal(data.revision,'r1');assert.equal(data.start,'2026-01-28');assert.equal(data.end,'2027-07-05');
  assert.equal(data.reprogramming.generalShiftWorkdays,-148);assert.equal(data.reprogramming.n4ShiftWorkdays,-178);
  for(const task of data.tasks){
@@ -56,7 +58,8 @@ test('R1 lleva ambos bombeos al día real y conserva A0, duraciones y calendario
  const structure=data.tasks.filter(t=>t.id>=26&&t.id<=39);for(let i=1;i<structure.length;i++)assert.ok(structure[i].start>structure[i-1].end);
  assert.ok(data.tasks.find(t=>t.id===173).start>data.tasks.find(t=>t.id===33).end);
 });
-test('R1 no desplaza ni reemplaza partes o restricciones locales y respeta respaldos anteriores',()=>{
+test('Histórico R1 respeta partes y restricciones anteriores',()=>{
+ const data=r1,tasks=r1.tasks.filter(t=>['activity','milestone'].includes(t.kind));
  const task=data.tasks.find(t=>t.id===135);
  const local={...emptyState(),reports:[{taskId:135,date:'2026-10-30',progress:80,owner:'Jefatura',note:'Dato local a revisar',savedAt:'2026-10-31T15:00:00.000Z'}],restrictions:[{id:'r-original',taskId:135,opened:'2026-10-29',due:'2026-11-02',resolved:null,cause:'Prueba pendiente',owner:'Jefe',category:'Inspección'}]};
  const before=JSON.stringify(local);const safe=validateState(local,tasks);
@@ -64,4 +67,26 @@ test('R1 no desplaza ni reemplaza partes o restricciones locales y respeta respa
  assert.equal(safe.restrictions[0].due,'2026-11-02');assert.equal(safe.reports[0].date,'2026-10-30');
  assert.equal(reportAt(task,emptyState(),'2026-10-30').progress,100);
  const other=tasks.find(t=>t.id===134);assert.equal(inspect(other,emptyState(),'2026-10-30').actual,null);
+});
+
+test('R2 pausa el avance esperado durante vacaciones y retoma el 11/01',()=>{
+ const t=data.tasks.find(t=>t.id===300);
+ assert.equal(t.start,'2026-12-21');assert.equal(t.end,'2027-01-12');assert.equal(workdays(t.start,t.end,t.calendar),5);
+ for(const date of ['2026-12-23','2026-12-24','2026-12-31','2027-01-08','2027-01-10'])assert.equal(expected(t,date),60,date);
+ assert.equal(expected(t,'2027-01-11'),80);assert.equal(expected(t,'2027-01-12'),100);
+ for(const t of tasks){if(t.duration)assert.equal(workdays(t.start,t.end,t.calendar),t.duration,t.code);}
+});
+test('R2 conserva datos privados de tareas archivadas y permite partes de hitos nuevos',()=>{
+ const state={...emptyState(),reports:[{taskId:43,date:'2026-10-31',progress:43,owner:'Jefatura',note:'Parte anterior',savedAt:'2026-10-31T12:00:00Z'}],restrictions:[{taskId:45,id:'old',opened:'2026-10-30',due:'2026-11-05',resolved:null,cause:'Pendiente anterior',owner:'Compras',category:'Materiales'}]};
+ assert.equal(data.tasks.find(t=>t.id===43).active,false);assert.equal(data.tasks.find(t=>t.id===45).active,false);
+ assert.deepEqual(validateState(state,data.tasks),state);
+ const h=data.tasks.find(t=>t.sourceId==='H16');const next=upsertReport(state,{taskId:h.id,date:'2026-11-16',progress:100,owner:'Jefe',note:'Hito',savedAt:'2026-11-16T12:00:00Z'});assert.equal(validateState(next,data.tasks).reports.length,2);
+ assert.equal(inspect(data.tasks.find(t=>t.sourceId==='L1'),state,'2026-11-16').actual,null);
+});
+test('R2 preserva fechas definitivas, compromisos y antecedentes de bombeo sin certificar otro alcance',()=>{
+ assert.equal(data.revision,'r2');assert.equal(data.start,'2026-11-09');assert.equal(data.end,'2027-10-13');
+ for(const id of [223,265])assert.equal(data.tasks.find(t=>t.id===id).end,'2026-11-27');
+ assert.equal(data.tasks.find(t=>t.id===445).end,'2027-02-19');
+ for(const [id,planned] of [[135,'2026-11-27'],[181,'2026-12-04']]){const t=data.tasks.find(t=>t.id===id);assert.equal(t.end,planned);assert.equal(t.previousConfirmedReport.date,'2026-10-30');assert.equal(t.confirmedReport,undefined);assert.equal(inspect(t,emptyState(),'2026-11-03').actual,null);}
+ const ids=new Set(tasks.map(t=>t.sourceId));for(const t of tasks)for(const [,id,relation] of t.predecessors.matchAll(/([A-Z0-9]+):(FS|SS)/g)){assert.ok(ids.has(id));assert.ok(['FS','SS'].includes(relation));}
 });

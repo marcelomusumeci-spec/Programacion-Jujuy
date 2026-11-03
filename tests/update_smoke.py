@@ -25,15 +25,16 @@ with TemporaryDirectory(prefix='jujuy-update-') as temp:
             part={'version':1,'project':'jujuy-a0','reports':[{'taskId':43,'date':'2026-10-31','progress':43,'owner':'Jefe original','note':'Conservar este parte','savedAt':'2026-10-31T14:00:00.000Z'}],'restrictions':[]}
             page.evaluate('(s)=>localStorage.setItem("jujuy-control-v1",s)',json.dumps(part))
             active['directory']=str(ROOT)
-            page.reload();page.wait_for_selector('#apply-update',timeout=20000);page.locator('#apply-update').click();page.wait_for_function("navigator.serviceWorker.controller && document.querySelector('.sidebar-bottom strong')?.textContent.includes('R1')")
+            page.reload();page.wait_for_selector('#apply-update',timeout=20000);page.locator('#apply-update').click();page.wait_for_function("navigator.serviceWorker.controller && document.querySelector('.sidebar-bottom strong')?.textContent.includes('R2')")
             page.wait_for_timeout(500)
             assert page.evaluate('JSON.parse(localStorage.getItem("jujuy-control-v1"))')==part
-            assert page.evaluate("fetch('data/schedule.json?v=r1').then(r=>r.json()).then(d=>d.revision)")=='r1'
-            assert page.evaluate("caches.keys()") == ['jujuy-app-oddino-v1']
+            assert page.evaluate("fetch('data/schedule.json?v=r2-20261103').then(r=>r.json()).then(d=>d.revision)")=='r2'
+            assert page.evaluate("caches.keys()") == ['jujuy-app-r2-20261103']
             context.set_offline(True);page.reload();page.wait_for_selector('.trade-card')
-            assert page.locator('.sidebar-bottom strong').inner_text()=='R1 · Base real 30/10/2026'
+            assert page.locator('.sidebar-bottom strong').inner_text()=='R2 · Gantt revisado'
             assert page.evaluate('JSON.parse(localStorage.getItem("jujuy-control-v1"))')==part
+            page.get_by_role('button',name='Programación',exact=True).click();page.locator('#toggle-archive').click();page.locator('#search').fill('N1-ALB_ET1');page.locator('[data-task="43"]').click();assert '43%' in page.locator('.history-row').inner_text();assert 'archivada' in page.locator('#task-body').inner_text();assert page.evaluate('JSON.parse(localStorage.getItem("jujuy-control-v1"))')==part
             assert not errors,errors
             browser.close()
-            print('PASS: actualización A0 → R1 en celular, partes intactos y portada Oddino disponible offline.')
+            print('PASS: actualización A0 → R2 en celular, partes intactos y portada Oddino disponible offline.')
     finally:server.shutdown();server.server_close()

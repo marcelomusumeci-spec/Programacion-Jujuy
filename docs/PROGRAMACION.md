@@ -1,69 +1,65 @@
-# Reprogramación R1 · Obra Jujuy
+# Programación vigente R2 · Obra Jujuy
 
-## Referencia real confirmada
+## Fuente definitiva para las fechas del tablero
 
-El comitente confirmó expresamente que **los bombeos de contrapisos de los pisos 3 y 4 se realizaron ambos el 30/10/2026**. Los hitos ID 135 (N3-BOMBEO_) y 181 (N4-BOMBEO_) quedan en esa fecha y con 100% de ejecución confirmado. No se certifican otras tareas ni el resto de sus tandas.
+Archivo entregado por el usuario: **Jujuy_Programacion_completa_revisada.pdf**, 40 páginas, versión PDF de su Excel R2. La app adopta las fechas explícitas de **Inicio y Fin de la sección 2**; no las desplaza desde R1 ni las calcula a partir de los índices internos o de Disponibilidad mínima.
 
-## Método y alcance
+Se transcribieron las **395 actividades e hitos**, incluidos los nuevos IDs H16, LIB y L1–L8. Los 385 IDs numéricos se cotejaron contra las fechas de revisión de la sección 4, que conserva 491 registros de trazabilidad. Todas las duraciones de actividades coinciden con el calendario de vacaciones R2. La fuente, su SHA-256 y la página de cada actividad quedan registrados en `data/schedule.json`.
 
-Se conservan las 491 filas, sus IDs, niveles, rubros, alcances, duraciones y fuentes. La A0 no se altera: `data/schedule-a0.json`, `programacion-a0.csv`, `PROGRAMACION-A0.md` y los nueve PDF conservan los valores originales.
+**Inicio de las actividades del modelo: 09/11/2026. Cierre general: 13/10/2027.** El inicio del modelo no se presenta como fecha histórica real de inicio de obra. Se mantienen visibles las condiciones y supuestos que el propio documento señala; la incorporación de fechas no acredita ejecución ni habilitación de uso.
 
-- **Referencia general N3:** del 26/05/2027 al 30/10/2026. Todas las fechas anteriores y posteriores se adelantan **148 días laborables**, salvo la secuencia N4 indicada abajo.
-- **Secuencia propia N4:** su bombeo original era el 07/07/2027. Para llevarlo también al 30/10/2026 se adelanta su secuencia de albañilería, instalaciones y terminaciones (IDs 173–213, más resumen ID 172) **178 días laborables**. Así se mantienen los intervalos de esa secuencia anteriores y posteriores al bombeo sin comprimir duraciones. La estructura N4 conserva el desplazamiento general para mantener el orden constructivo N1 → N8; queda finalizada el 26/06/2026, antes del inicio del frente N4 el 20/07/2026.
-- Calendario lunes–viernes, sin feriados, igual al supuesto de control de la aplicación. Las fechas se desplazan en días laborables y no en días corridos, para evitar colocar trabajos en fines de semana y alterar su duración laborable.
-- Los hitos de contratación, estructura, espacios comunes, medianeras y otros niveles reciben el desplazamiento general. No se afirma que esos hitos ya se hayan cumplido.
-- Hito de coordinación ID 170 «Bombeos N4-5-6»: se alinea a N4 (30/10/2026), como referencia de arranque de esa tanda; **no acredita que N5 y N6 estén bombeados**. El hito ID 169 mantiene su relación con el arranque N1 de su tanda. Los hitos por nivel conservan sus propias fechas.
-- El resumen de bombeos ID 168 abarca desde el primer hasta el último bombeo individual reprogramado. Su duración original se conserva como dato documental; no se interpreta como suma de jornadas productivas.
+## Fechas de control
 
-Esta es una reprogramación por desplazamiento con dos anclas, **no un cálculo de red CPM**: los PDF no contienen la tabla de predecesoras, holguras, cuadrillas ni recursos. La coherencia interna de cada frente se conserva, pero la jefatura debe validar las relaciones entre frentes y la disponibilidad de cuadrillas. Por ejemplo, para conservar su secuencia y coincidir en el bombeo, N4 comienza sus actividades antes que N3; no se ha supuesto una cuadrilla compartida.
+| Frente | Fin ET2 | Contrapiso terminado | Inicio ET3 | Fin ET3 | Inicio yesería | Entrega |
+|---|---|---|---|---|---|---|
+| P1 | 13/11/2026 | 13/11/2026 | 16/11/2026 | 27/11/2026 | 30/11/2026 | 10/03/2027 |
+| P2 | 20/11/2026 | 20/11/2026 | 23/11/2026 | 04/12/2026 | 07/12/2026 | 17/03/2027 |
+| P3 | 27/11/2026 | 27/11/2026 | 30/11/2026 | 11/12/2026 | 14/12/2026 | 24/03/2027 |
+| P4 | 04/12/2026 | 04/12/2026 | 07/12/2026 | 18/12/2026 | 21/12/2026 | 31/03/2027 |
+| P5 | 11/12/2026 | **27/11/2026** | 14/12/2026 | 12/01/2027 | 13/01/2027 | 07/04/2027 |
+| P6 | 18/12/2026 | **27/11/2026** | 21/12/2026 | 19/01/2027 | 20/01/2027 | 14/04/2027 |
+| P7 | 12/01/2027 | 11/12/2026 | 13/01/2027 | 26/01/2027 | 27/01/2027 | 21/04/2027 |
+| P8 | 19/01/2027 | 18/12/2026 | 20/01/2027 | 02/02/2027 | 03/02/2027 | 28/04/2027 |
 
-## Fechas resultantes
+- P9 / quincho y azotea: 30/11/2026–29/06/2027; inicio sujeto a liberación de Dirección de Obra.
+- Medianeras: 02/12/2026–19/02/2027; compromiso al 20/02/2027 (sábado).
+- PB: ejecución y puesta a punto 10/02/2027–01/07/2027; entrega ligada al cierre general del 13/10/2027.
+- Comunes y ascensor: 18/06/2027–13/10/2027.
+- Hormigonado de azotea y sala de máquinas: 16/11/2026; no equivale a liberación del frente.
 
-**Inicio del plan desplazado: 28/01/2026. Fin del plan desplazado: 05/07/2027.** Son fechas resultantes del desplazamiento solicitado, no fechas reales acreditadas ni un nuevo compromiso contractual.
+Las fechas de contrapiso son hitos de liberación de duración cero, no la duración física del bombeo. El PDF marca los de P5/P6 como obligatorios, y otros como propuestos; ambas condiciones se conservan en las observaciones de la app.
 
-| Frente | Inicio R1 | Fin/entrega R1 |
-|---|---|---|
-| NIVEL 1 | 10/08/2026 | 11/01/2027 |
-| NIVEL 2 | 17/08/2026 | 18/01/2027 |
-| NIVEL 3 | 24/08/2026 | 25/01/2027 |
-| NIVEL 4 | 20/07/2026 | 25/01/2027 |
-| NIVEL 5 | 07/09/2026 | 08/02/2027 |
-| NIVEL 6 | 14/09/2026 | 15/02/2027 |
-| NIVEL 7 | 21/09/2026 | 03/05/2027 |
-| NIVEL 8 | 28/09/2026 | 01/03/2027 |
-| AZOTEA | 05/10/2026 | 19/03/2027 |
-| PALIER & ESCALERAS | 10/03/2027 | 05/07/2027 |
-| MEDIANERAS | 16/11/2026 | 18/01/2027 |
-| PLANTA BAJA | 16/11/2026 | 05/07/2027 |
+## Calendario
 
-El CSV `programacion.csv` incluye por ID inicio/fin R1, inicio/fin A0, desplazamiento laborable y duración documental. `scripts/reprogram.py` regenera R1 siempre desde la A0 original: ejecutarlo nuevamente no vuelve a adelantar fechas.
+Lunes a viernes, con **cierre del 24/12/2026 al 10/01/2027 inclusive**. Reinicio el **11/01/2027**. Se excluyen 12 días laborables; otros feriados no se descuentan.
 
-## Conservación del seguimiento
+El avance esperado se interpola sobre los días efectivos de cada actividad. Durante el cierre permanece constante; no penaliza el período de vacaciones como atraso por sí mismo. Los hitos se exigen desde su fecha. Las actividades archivadas de R1 conservan su calendario original y no intervienen en los indicadores activos.
 
-Los partes y restricciones guardados por cada usuario permanecen intactos, con sus fechas reales, responsables y notas. No se desplazan fechas de partes, altas, compromisos ni resoluciones de restricciones. Al conservar el identificador de tarea y la clave de almacenamiento, los respaldos anteriores siguen siendo compatibles.
+## Vínculos, holguras y supuestos
 
-Los dos hitos confirmados se incorporan como referencia de ejecución al plan compartido, no escribiendo ni reemplazando partes privados. Sólo aparecen al consultar cortes desde el 30/10/2026. Un parte local para la misma actividad y fecha tiene prioridad; un parte posterior también se respeta. Los detalles indican su confirmación por separado del historial local.
+La app muestra las predecesoras FS/SS, la HT y la criticidad **tal como aparecen en el PDF**, sin recalcularlas. Los vínculos del documento son reconstruidos, no extraídos de un archivo MS Project nativo. Sus 58 actividades “Crítica modelo” no se convierten automáticamente en semáforo rojo: el atraso se calcula con avances reales.
 
-El resto de tareas sin parte seguirá figurando **Sin parte** aunque su nueva fecha de fin sea anterior al corte. No se presume un 100% de ejecución de las precedentes por haberse ejecutado el bombeo.
+La HT es holgura hasta el cierre general y no autoriza a incumplir contrapisos del 27/11 ni medianeras del 20/02. ET3 dura 10 días y empieza un piso cada 5, por lo que exige dos frentes o capacidad equivalente. Se conservan las condiciones de liberación, pruebas, suministros y ascensor; la entrega de un sector no acredita habilitación. No se inventan duraciones para trámites o conexiones no informadas.
 
-## Criterios del semáforo
+## Conservación de registros y alcance
 
-Avance esperado interpolado por días lunes–viernes inclusivos entre inicio y fin R1, sin feriados; hitos al 100% desde su fecha. El promedio se pondera por duración documental (hitos con peso 1); no es avance económico certificado. Se usa el último parte con fecha menor o igual al corte.
+La actualización mantiene **501 registros internos**: 491 IDs originales y 10 nuevos. De ellos, **395 integran el plan activo** y **106 quedan fuera del alcance activo R2**, con el tratamiento indicado en la sección de trazabilidad del PDF. Las actividades productivas anteriores se pueden abrir desde **Programación → Historial fuera de R2**. Los 106 incluyen también resúmenes y contrataciones que no formaban parte de los indicadores de producción.
 
-- Verde: avance conocido igual o superior al esperado; al 100%, Completado.
-- Rojo: avance conocido menor al esperado, con tolerancia de 0,5 puntos por redondeo.
-- Ámbar: restricción vigente al corte, con prioridad sobre el atraso.
-- Gris: sin parte o programado para el futuro. La ausencia de información no equivale a cero avance.
+Los IDs internos anteriores se mantienen. H16, LIB y L1–L8 usan IDs internos numéricos nuevos, separados de los originales, y muestran el ID del PDF en pantalla. La clave local `jujuy-control-v1` y el identificador interno de proyecto `jujuy-a0` se conservan para compatibilidad. La restauración valida tanto IDs activos como archivados.
 
-## Observaciones originales que permanecen
+**No se borran, desplazan ni transfieren partes o restricciones privados.** Los de tareas archivadas se conservan para consulta/edición y respaldo, pero se excluyen del semáforo activo. Los hitos L1–L8 agrupan instalaciones iniciales P1–P8 sin saldo real informado; no reciben automáticamente porcentajes de sus tareas antiguas. ET1 ejecutada hasta P8 al 10/10/2026 figura como observación del documento, sin inventar fechas reales por piso.
 
-- ID 391: Niveles A0 indica 14–16/06/2027, 3 días, y Curva A0 16–17/06/2027, 2 días. R1 adopta las fechas de Niveles y las desplaza. La discrepancia original se conserva, sin mezclarla con el cambio R1.
-- Las etapas no tienen equivalencias automáticas entre fichas y cronograma, especialmente electricidad, gas y espacios comunes.
-- Los checklist anteriores a limpieza y terminaciones requieren verificación final antes de entrega; la separación temporal de PB entre puesta a punto y entrega se mantiene.
-- ID 395 de azotea sigue requiriendo desarrollar su alcance según proyecto.
+### Antecedente de bombeos P3/P4
 
-Ver `PROGRAMACION-A0.md` para la revisión documental completa y las fichas de origen. No se editan los PDF para hacerlos pasar por documentos R1.
+R1 incluía bombeos confirmados el 30/10/2026. El PDF R2 programa **“Contrapiso terminado” P3 el 27/11/2026 y P4 el 04/12/2026**. El antecedente del bombeo se conserva en `previousConfirmedReport` y en el detalle de actividad, sin usarlo para completar automáticamente el alcance revisado de R2. Los partes manuales de cualquier fecha, incluidos los de esos IDs, permanecen intactos y siguen siendo editables por su propietario. No se modifica un parte real por un cambio de programación.
 
-## Actualización de la aplicación
+## Históricos y reproducción
 
-R1 actualiza las fechas visibles, el CSV de programación, el plan esperado y la caché offline. Al recibir una actualización aparece la opción «Actualizar R1»; guardar los partes abiertos antes de pulsarla. Si se mantiene una pestaña antigua, cerrar y volver a abrir la aplicación con conexión para recibir la revisión. Nunca borrar datos del sitio para actualizar: eso eliminaría los partes locales.
+- A0: `data/schedule-a0.json`, `docs/programacion-a0.csv`, `docs/PROGRAMACION-A0.md` y los nueve PDF originales.
+- R1: `data/schedule-r1.json`, `docs/programacion-r1.csv`, `docs/PROGRAMACION-R1.md`.
+- R2 vigente: `data/schedule.json`, `docs/programacion.csv` y el PDF revisado.
+- `scripts/import_r2.py` importa el PDF y realiza las comprobaciones de integridad. Ejecutarlo nuevamente produce exactamente el mismo resultado y no vuelve a desplazar fechas. No ejecutar el generador R1 para actualizar un plan R2.
+
+## Actualización y uso
+
+Abrir la app con conexión y aceptar “Actualizar app” después de guardar formularios abiertos. No borrar datos del sitio para actualizar. La caché R2 permite consultar y editar partes offline tras la primera carga completa; los PDF no se precargan, por lo que deben descargarse previamente si se necesitan sin conexión. No hay sincronización con monday ni entre dispositivos; el respaldo JSON sigue siendo el mecanismo de traslado de datos.

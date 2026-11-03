@@ -9,38 +9,38 @@ with sync_playwright() as p:
  context=browser.new_context(viewport={'width':1440,'height':1050},accept_downloads=True)
  page=context.new_page();errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
  page.goto(BASE);page.wait_for_selector('.trade-card');page.locator('#cutoff').fill('2026-10-31');page.locator('#cutoff').dispatch_event('change');page.screenshot(path=str(ARTIFACTS/'jujuy-desktop.png'),full_page=True)
- schedule=page.request.get(BASE.rstrip('/')+'/data/schedule.json?v=r1').json()
- due=[t for t in schedule['tasks'] if t['kind'] in ['activity','milestone'] and t['start']<='2026-10-31']
+ schedule=page.request.get(BASE.rstrip('/')+'/data/schedule.json?v=r2-20261103').json()
+ due=[t for t in schedule['tasks'] if t.get('active',True) and t['kind'] in ['activity','milestone'] and t['start']<='2026-10-31']
  missing=sum(not t.get('confirmedReport') for t in due)
  assert int(page.locator('.stat-card.missing strong').inner_text())==missing
- assert page.locator('.sidebar-bottom strong').inner_text()=='R1 · Base real 30/10/2026'
- page.get_by_role('button',name='Programación',exact=True).click();page.locator('#search').fill('N3-BOMBEO_');assert page.locator('[data-task="135"] .badge').inner_text()=='Completado'
- page.locator('#search').fill('N4-BOMBEO_');assert page.locator('[data-task="181"] .badge').inner_text()=='Completado'
+ assert page.locator('.sidebar-bottom strong').inner_text()=='R2 · Gantt revisado'
+ page.get_by_role('button',name='Programación',exact=True).click();page.locator('#search').fill('P3 - Contrapiso terminado');assert page.locator('[data-task="135"] .badge').inner_text()=='Programado'
+ page.locator('#search').fill('P4 - Contrapiso terminado');assert page.locator('[data-task="181"] .badge').inner_text()=='Programado'
  page.locator('#cutoff').fill('2026-10-29');page.locator('#cutoff').dispatch_event('change');assert page.locator('[data-task="181"] .badge').inner_text()=='Programado'
- page.locator('#search').fill('')
+ page.locator('#search').fill('H16');page.locator('[data-task="10001"]').click();assert 'R2' in page.locator('#task-body').inner_text();assert '16 de nov' in page.locator('#task-body').inner_text();page.locator('[data-close=task-dialog]').click();page.locator('#search').fill('')
  page.locator('#cutoff').fill('2027-03-10');page.locator('#cutoff').dispatch_event('change')
- page.get_by_role('button',name='Programación',exact=True).click();page.locator('#search').fill('N1-ALB_ET1');page.locator('[data-task="43"]').click()
+ page.get_by_role('button',name='Programación',exact=True).click();page.locator('#search').fill('P1 - ET2');page.locator('[data-task="44"]').click()
  f=page.locator('#report-form');f.locator('[name=progress]').fill('50');f.locator('[name=owner]').fill('Jefatura');f.locator('[name=note]').fill('Parte de prueba');f.get_by_role('button',name='Guardar parte',exact=True).click()
  assert page.locator('.dialog-heading .badge').inner_text()=='Atrasado'
  page.locator('.add-restriction summary').click();rf=page.locator('#restriction-form');rf.locator('[name=cause]').fill('Falta material de prueba');rf.locator('[name=owner]').fill('Compras');rf.locator('[name=due]').fill('2027-03-12');rf.get_by_role('button',name='Guardar restricción',exact=True).click()
  assert page.locator('.dialog-heading .badge').inner_text()=='Restringido'
  page.locator('[data-resolve] button').click();assert page.locator('.dialog-heading .badge').inner_text()=='Atrasado'
- page.locator('[data-close=task-dialog]').click();page.reload();page.wait_for_selector('.task-row, .trade-card');page.locator('#cutoff').fill('2027-03-10');page.locator('#cutoff').dispatch_event('change');page.get_by_role('button',name='Programación',exact=True).click();page.locator('#search').fill('N1-ALB_ET1')
- assert page.locator('[data-task="43"] .badge').inner_text()=='Atrasado'
+ page.locator('[data-close=task-dialog]').click();page.reload();page.wait_for_selector('.task-row, .trade-card');page.locator('#cutoff').fill('2027-03-10');page.locator('#cutoff').dispatch_event('change');page.get_by_role('button',name='Programación',exact=True).click();page.locator('#search').fill('P1 - ET2')
+ assert page.locator('[data-task="44"] .badge').inner_text()=='Atrasado'
  with page.expect_download() as download:page.locator('#backup').click()
  path=download.value.path();backup=json.load(open(path));assert backup['reports'][0]['progress']==50;assert backup['restrictions'][0]['resolved']=='2027-03-10'
  with page.expect_download() as download:page.locator('#export-cut').click()
- assert 'N1-ALB_ET1' in open(download.value.path(),encoding='utf-8-sig').read()
+ assert 'P1 - ET2' in open(download.value.path(),encoding='utf-8-sig').read()
  # Restoration and its confirmation are exercised with the exported copy.
  page.on('dialog',lambda d:d.accept());page.locator('#restore').set_input_files({'name':'copia.json','mimeType':'application/json','buffer':json.dumps(backup).encode()});page.wait_for_timeout(250)
- assert page.locator('[data-task="43"] .badge').inner_text()=='Atrasado'
+ assert page.locator('[data-task="44"] .badge').inner_text()=='Atrasado'
  # Real viewport, touch/mobile, no horizontal overflow; exercise the modal.
  mobile=browser.new_context(viewport={'width':390,'height':844},is_mobile=True,has_touch=True,device_scale_factor=1)
  m=mobile.new_page();m.on('pageerror',lambda e:errors.append(str(e)));m.goto(BASE);m.wait_for_selector('.trade-card');assert m.evaluate('document.documentElement.scrollWidth <= innerWidth')
- m.screenshot(path=str(ARTIFACTS/'jujuy-mobile.png'),full_page=True);m.get_by_role('button',name='Programación',exact=True).click();m.locator('#search').fill('N1-ALB_ET1');m.locator('[data-task="43"]').click();assert m.locator('#task-dialog').is_visible();assert m.evaluate('document.documentElement.scrollWidth <= innerWidth');m.screenshot(path=str(ARTIFACTS/'jujuy-mobile-detail.png'),full_page=True);m.locator('[data-close=task-dialog]').click()
- m.get_by_role('button',name='Base documental',exact=True).click();assert m.locator('.source-list a').count()==9
+ m.screenshot(path=str(ARTIFACTS/'jujuy-mobile.png'),full_page=True);m.get_by_role('button',name='Programación',exact=True).click();m.locator('#search').fill('P1 - ET2');m.locator('[data-task="44"]').click();assert m.locator('#task-dialog').is_visible();assert m.evaluate('document.documentElement.scrollWidth <= innerWidth');m.screenshot(path=str(ARTIFACTS/'jujuy-mobile-detail.png'),full_page=True);m.locator('[data-close=task-dialog]').click()
+ m.get_by_role('button',name='Base documental',exact=True).click();assert m.locator('.source-list a').count()==10
  # Complete first install, control reload, then offline cold navigation and data entry.
- page.evaluate('navigator.serviceWorker.ready');page.reload();page.wait_for_selector('.trade-card');page.wait_for_function('navigator.serviceWorker.controller !== null');context.set_offline(True);page.reload();page.wait_for_selector('.trade-card');page.get_by_role('button',name='Programación',exact=True).click();page.locator('#search').fill('N1-ALB_ET1');page.locator('[data-task="43"]').click();f=page.locator('#report-form');f.locator('[name=date]').fill('2027-03-11');f.locator('[name=progress]').fill('70');f.get_by_role('button',name='Guardar parte',exact=True).click();assert page.evaluate('JSON.parse(localStorage.getItem("jujuy-control-v1")).reports.length')==2
+ page.evaluate('navigator.serviceWorker.ready');page.reload();page.wait_for_selector('.trade-card');page.wait_for_function('navigator.serviceWorker.controller !== null');context.set_offline(True);page.reload();page.wait_for_selector('.trade-card');page.get_by_role('button',name='Programación',exact=True).click();page.locator('#search').fill('P1 - ET2');page.locator('[data-task="44"]').click();f=page.locator('#report-form');f.locator('[name=date]').fill('2027-03-11');f.locator('[name=progress]').fill('70');f.get_by_role('button',name='Guardar parte',exact=True).click();assert page.evaluate('JSON.parse(localStorage.getItem("jujuy-control-v1")).reports.length')==2
  assert not errors,errors
  # Tablet portrait and narrow mobile.
  for width,height in [(768,1024),(320,740)]:
