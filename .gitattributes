@@ -1,0 +1,2 @@
+# Conservar los PDF de origen byte por byte; no son archivos de texto.
+*.pdf binary
