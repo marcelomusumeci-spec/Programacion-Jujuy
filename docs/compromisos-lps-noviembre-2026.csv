@@ -1,0 +1,21 @@
+﻿ID,Fecha compromiso,Código origen,Rubro/alcance,Pisos,Compromiso,Estado,Observación
+LPS-202611-01,2026-11-02,ALB-01,Albañilería,P8,Inicio ET1 piso 8,planificado,"La flecha se conserva como indicación de continuidad, sin asumir duración."
+LPS-202611-02,2026-11-04,COM-01,Compras,Sin piso indicado,Ladrillos huecos: 8 palets,planificado,"No se distingue si la tarjeta significa compra, pedido o entrega."
+LPS-202611-03,2026-11-06,COM-03,Compras,Sin piso indicado,Compra caños […] lavarropas,planificado,La palabra o abreviatura entre caños y lavarropas no se lee con seguridad.
+LPS-202611-04,2026-11-10,ALB-01,Albañilería,P8,Fin ET1 piso 8,planificado,"Es un compromiso de fin, no una certificación de cumplimiento."
+LPS-202611-05,2026-11-10,ALB-04,Albañilería,"P5, P6",Revoques P5 y P6,planificado,No se indica porcentaje ni alcance de terminación.
+LPS-202611-06,2026-11-12,ALB-02,Albañilería,"P1, P2",Colocación de premarcos P1 y P2,planificado,No implica completar toda ET2.
+LPS-202611-07,2026-11-13,CAL-01,Calderas,"P5, P6",Fin ET1 P5 y P6,planificado,Etapa del rubro Calderas según la leyenda de colores.
+LPS-202611-08,2026-11-13,AA-01,Aire acondicionado,"P5, P6",Fin ET1 P5 y P6,planificado,Etapa del rubro Aire acondicionado.
+LPS-202611-09,2026-11-13,SAN-01,Instalación sanitaria,"P5, P6",Fin ET1 P5 y P6,planificado,Etapa del rubro Sanitaria.
+LPS-202611-10,2026-11-13,ELE-02,Electricidad,"P3, P4",Fin ET2 P3 y P4,planificado,No equivale a fin ET2 de albañilería.
+LPS-202611-11,2026-11-13,DO-01,Dirección de obra,General,Ajustar programación general,planificado,"Acción de coordinación, no avance físico de una tarea."
+LPS-202611-12,2026-11-14,EST-02,Estructura H°A,SH+T,Fin SH+T — sala de máquinas y tanques,planificado,"SH+T aclarado por el usuario. La tarjeta dice Fin; no se infiere si refiere armado, encofrado u otro cierre previo al hormigonado."
+LPS-202611-13,2026-11-16,Sin ID legible / HA,Estructura H°A,SH+T,Hormigón de sala de máquinas y tanques,planificado,"Significado de H. SH+T confirmado por el usuario. Compromiso, sin ejecución informada."
+LPS-202611-14,2026-11-18,ALB-03,Albañilería,"P5, P6",Fajas p/ ET2 P5 y P6,planificado,Lectura ET2 probable; confirmar la abreviatura manuscrita.
+LPS-202611-15,2026-11-18,SAN-02,Gas,"P5, P6",Inspección ocular de instalación de gas,planificado,Texto confirmado por el usuario. Se conserva código SAN-02; se clasifica el alcance como Gas y no se atribuye cumplimiento.
+LPS-202611-16,2026-11-20,ELE-01,Electricidad,"P5, P6",Fin etapa 2 P5 y P6,planificado,El código ELE-01 no se asimila automáticamente a ELE_ET1: la tarjeta dice etapa 2.
+LPS-202611-17,2026-11-25,COM-02,Compras,Sin piso indicado,Ladrillos huecos: 8 palets,planificado,"No se distingue si la tarjeta significa compra, pedido o entrega."
+LPS-202611-18,2026-11-27,BO,Bombeo RDC + H°,"P5, P6",RDC […] P5–P6,planificado,"Código/alcance a confirmar. Posible relación con contrapisos P5/P6, sin asignación definitiva."
+LPS-202611-19,2026-11-27,ALB-04,Albañilería,"P1, P2",Subir vistos P1 y P2,planificado,Confirmar que vistos significa ladrillo visto y el alcance de provisión/subida.
+LPS-202611-20,2026-11-28,ALB-05,Albañilería,PB - Este,Ejec. Med. PB-Este,planificado,Posible medianera; no equiparar automáticamente con toda la medianera Este del Gantt.

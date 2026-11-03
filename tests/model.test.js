@@ -4,11 +4,13 @@ import {readFileSync} from 'node:fs';
 import {expected,inspect,summarize,emptyState,validateState,upsertReport,validDate,csvCell,workdays,reportAt} from '../model.js';
 const data=JSON.parse(readFileSync(new URL('../data/schedule.json',import.meta.url)));
 const original=JSON.parse(readFileSync(new URL('../data/schedule-a0.json',import.meta.url)));
+const r2=JSON.parse(readFileSync(new URL('../data/schedule-r2.json',import.meta.url)));
 const r1=JSON.parse(readFileSync(new URL('../data/schedule-r1.json',import.meta.url)));
 const tasks=data.tasks.filter(t=>t.active&&['activity','milestone'].includes(t.kind));
 const t={id:1000,start:'2027-03-04',end:'2027-03-10',duration:5};
 const report=(date,progress)=>({taskId:1000,date,progress,owner:'Cuadrilla A',note:'Ejecutado',savedAt:'2027-03-10T12:00:00.000Z'});
 test('R2: 395 actividades activas, 491 antecedentes y 10 IDs nuevos compatibles',()=>{
+ const data=r2,tasks=r2.tasks.filter(t=>t.active);
  assert.equal(original.tasks.length,491);assert.equal(data.tasks.length,501);assert.equal(new Set(data.tasks.map(t=>t.id)).size,501);assert.equal(tasks.length,395);assert.equal(data.sources.length,10);
  for(const task of data.tasks){assert.ok(validDate(task.start));assert.ok(validDate(task.end));assert.ok(task.end>=task.start);assert.ok(task.sourcePage>=1&&task.sourcePage<=40);}
  assert.equal(data.tasks.find(t=>t.id===391).start,'2027-02-12');assert.equal(data.tasks.find(t=>t.id===490).end,'2027-10-13');
@@ -70,6 +72,7 @@ test('Histórico R1 respeta partes y restricciones anteriores',()=>{
 });
 
 test('R2 pausa el avance esperado durante vacaciones y retoma el 11/01',()=>{
+ const data=r2,tasks=r2.tasks.filter(t=>t.active);
  const t=data.tasks.find(t=>t.id===300);
  assert.equal(t.start,'2026-12-21');assert.equal(t.end,'2027-01-12');assert.equal(workdays(t.start,t.end,t.calendar),5);
  for(const date of ['2026-12-23','2026-12-24','2026-12-31','2027-01-08','2027-01-10'])assert.equal(expected(t,date),60,date);
@@ -77,6 +80,7 @@ test('R2 pausa el avance esperado durante vacaciones y retoma el 11/01',()=>{
  for(const t of tasks){if(t.duration)assert.equal(workdays(t.start,t.end,t.calendar),t.duration,t.code);}
 });
 test('R2 conserva datos privados de tareas archivadas y permite partes de hitos nuevos',()=>{
+ const data=r2,tasks=r2.tasks.filter(t=>t.active);
  const state={...emptyState(),reports:[{taskId:43,date:'2026-10-31',progress:43,owner:'Jefatura',note:'Parte anterior',savedAt:'2026-10-31T12:00:00Z'}],restrictions:[{taskId:45,id:'old',opened:'2026-10-30',due:'2026-11-05',resolved:null,cause:'Pendiente anterior',owner:'Compras',category:'Materiales'}]};
  assert.equal(data.tasks.find(t=>t.id===43).active,false);assert.equal(data.tasks.find(t=>t.id===45).active,false);
  assert.deepEqual(validateState(state,data.tasks),state);
@@ -84,9 +88,31 @@ test('R2 conserva datos privados de tareas archivadas y permite partes de hitos 
  assert.equal(inspect(data.tasks.find(t=>t.sourceId==='L1'),state,'2026-11-16').actual,null);
 });
 test('R2 preserva fechas definitivas, compromisos y antecedentes de bombeo sin certificar otro alcance',()=>{
+ const data=r2,tasks=r2.tasks.filter(t=>t.active);
  assert.equal(data.revision,'r2');assert.equal(data.start,'2026-11-09');assert.equal(data.end,'2027-10-13');
  for(const id of [223,265])assert.equal(data.tasks.find(t=>t.id===id).end,'2026-11-27');
  assert.equal(data.tasks.find(t=>t.id===445).end,'2027-02-19');
  for(const [id,planned] of [[135,'2026-11-27'],[181,'2026-12-04']]){const t=data.tasks.find(t=>t.id===id);assert.equal(t.end,planned);assert.equal(t.previousConfirmedReport.date,'2026-10-30');assert.equal(t.confirmedReport,undefined);assert.equal(inspect(t,emptyState(),'2026-11-03').actual,null);}
  const ids=new Set(tasks.map(t=>t.sourceId));for(const t of tasks)for(const [,id,relation] of t.predecessors.matchAll(/([A-Z0-9]+):(FS|SS)/g)){assert.ok(ids.has(id));assert.ok(['FS','SS'].includes(relation));}
+});
+
+test('R3 respeta el 9/11 no laborable, duraciones y los compromisos fijos',()=>{
+ assert.equal(data.revision,'r3');assert.equal(data.start,'2026-11-10');assert.equal(data.end,'2027-10-14');assert.equal(data.reprogramming.changedTasks,372);
+ const first=tasks.find(t=>t.sourceId==='44');assert.equal(first.start,'2026-11-10');assert.equal(first.end,'2026-11-16');assert.equal(expected(first,'2026-11-09'),0);assert.equal(workdays(first.start,first.end,first.calendar),5);
+ for(const t of tasks){if(t.duration)assert.equal(workdays(t.start,t.end,t.calendar),t.duration,t.code);assert.ok(t.floatDays>=0);assert.ok(t.r2Plan);}
+ for(const id of ['223','265'])assert.equal(tasks.find(t=>t.sourceId===id).end,'2026-11-27');
+ assert.equal(tasks.find(t=>t.sourceId==='445').end,'2027-02-19');assert.equal(tasks.find(t=>t.sourceId==='H16').start,'2026-11-16');assert.equal(tasks.find(t=>t.sourceId==='LIB').start,'2026-11-30');
+});
+test('R3 verifica vínculos FS/SS, lag SS+2 y conserva identidad para respaldos',()=>{
+ const map=new Map(tasks.map(t=>[t.sourceId,t]));
+ for(const t of tasks)for(const [,id,type,lag] of t.predecessors.matchAll(/([A-Z0-9]+):(FS|SS)([+-]\d+)?/g)){const pred=map.get(id);assert.ok(t.startIndex>=(type==='FS'?pred.endIndex:pred.startIndex)+Number(lag||0));}
+ const lagged=map.get('386'),pred=map.get('385');assert.equal(lagged.startIndex-pred.startIndex,2);
+ assert.deepEqual(new Set(data.tasks.map(t=>t.id)),new Set(r2.tasks.map(t=>t.id)));assert.deepEqual(validateState(emptyState(),data.tasks),emptyState());
+});
+test('LPS conserva 20 promesas sin ejecución y las correcciones confirmadas',()=>{
+ assert.equal(data.lps.items.length,20);assert.equal(new Set(data.lps.items.map(r=>r.id)).size,20);assert.equal(data.lps.ppc,null);
+ for(const item of data.lps.items){assert.equal(item.status,'planificado');assert.equal(item.completed,null);assert.equal(item.progress,null);assert.ok(validDate(item.date));}
+ const gas=data.lps.items.find(r=>r.code==='SAN-02');assert.equal(gas.actor,'Gas');assert.match(gas.text,/ocular.*gas/);assert.equal(gas.date,'2026-11-18');
+ assert.ok(data.lps.corrections.some(s=>s.includes('10/11/2026')));assert.ok(data.lps.pending.some(s=>s.includes('RDC')));
+ assert.equal(tasks.filter(t=>t.confirmedReport).length,0);
 });

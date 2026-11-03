@@ -1,0 +1,396 @@
+﻿ID R2,ID interno compatible,Sector,Actividad,Rubro,Inicio R2,Fin R2,Duración restante,HT PDF (días),Criticidad del modelo,Predecesoras PDF,Disponibilidad mínima PDF,Observación,Página PDF
+44,44,P1,P1 - ET2: premarcos y revoques interiores,Albañilería,2026-11-09,2026-11-13,5,0,Crítica modelo,,2026-11-09,Ancla P1 fin 13/11/26; cadencia 5 días laborables. Cierre 24/12/26 al 10/01/27 inclusive; reinicio 11/01/27.,3
+50,50,P1,"P1 - ET3: tapados, marcos y espacios técnicos",Albañilería,2026-11-16,2026-11-27,10,155,No crítica,44:FS; 51:FS,,"10 días originales, DESPUÉS de ET2 y contrapiso. Solape entre pisos exige frentes/cuadrillas suficientes.",3
+51,51,P1,P1 - Contrapiso terminado,Bombeo de contrapiso,2026-11-13,2026-11-13,0,155,No crítica,L1:FS,,Fecha propuesta por continuidad del tren. Se conserva hito de duración cero del original; no representa la duración del bombeo.,3
+52,52,P1,N1-YES_ET1,Yesería,2026-11-30,2026-12-04,5,155,No crítica,50:FS,,Dependencias reconstruidas; conservar duración original.,4
+53,53,P1,N1-ELEC_ET3,Electricidad,2026-12-07,2026-12-07,1,155,No crítica,52:FS,,Dependencias reconstruidas; conservar duración original.,4
+54,54,P1,N1-AA_ET2,Aire acondicionado,2026-12-07,2026-12-07,1,155,No crítica,52:FS,,Dependencias reconstruidas; conservar duración original.,4
+55,55,P1,N1-YES_ET2,Yesería,2026-12-07,2026-12-11,5,155,No crítica,53:SS; 54:SS,,Dependencias reconstruidas; conservar duración original.,4
+56,56,P1,N1-ELEC_ET4,Electricidad,2026-12-14,2026-12-18,5,155,No crítica,55:FS,,Dependencias reconstruidas; conservar duración original.,4
+57,57,P1,N1-IMP.LOCAL HUM_ET1,Impermeabilización,2026-12-14,2026-12-16,3,157,No crítica,55:FS,,Dependencias reconstruidas; conservar duración original.,4
+58,58,P1,N1-FA_PIN EXT_ET1,Pintura exterior,2026-11-30,2026-12-03,4,206,No crítica,50:FS,,Dependencias reconstruidas; conservar duración original.,4
+59,59,P1,N1-FA_HER PESADA_ET1,Herrería y barandas,2026-12-04,2026-12-07,2,206,No crítica,58:FS,,Dependencias reconstruidas; conservar duración original.,4
+60,60,P1,N1-REVEST&SOLADOS_ET1,Revestimientos y solados,2026-12-21,2027-01-12,5,155,No crítica,56:FS; 57:FS,,Dependencias reconstruidas; conservar duración original.,5
+61,61,P1,N1-REVEST&SOLADOS_ET2,Revestimientos y solados,2027-01-13,2027-01-19,5,155,No crítica,60:FS,,Dependencias reconstruidas; conservar duración original.,5
+62,62,P1,N1-REVEST&SOLADOS_ET3,Revestimientos y solados,2027-01-20,2027-01-26,5,155,No crítica,61:FS,,Dependencias reconstruidas; conservar duración original.,6
+63,63,P1,N1-FA_BARANDAS DEFINITIVAS,Herrería y barandas,2027-01-13,2027-01-14,2,192,No crítica,60:FS; 59:FS,,Dependencias reconstruidas; conservar duración original.,5
+64,64,P1,N1-FA_PIN EXT_ET2,Pintura exterior,2027-01-15,2027-01-18,2,192,No crítica,63:FS,,Dependencias reconstruidas; conservar duración original.,6
+65,65,P1,N1-MARMOLERIA_ET1,Marmolería,2027-01-13,2027-01-15,3,178,No crítica,60:FS,,Dependencias reconstruidas; conservar duración original.,5
+66,66,P1,N1-PIN INT_ET1,Pintura interior,2027-01-27,2027-02-02,5,155,No crítica,62:FS,,Dependencias reconstruidas; conservar duración original.,6
+67,67,P1,N1-ABERT EXT_ET2,Aberturas exteriores,2027-02-03,2027-02-09,5,155,No crítica,66:FS,,Dependencias reconstruidas; conservar duración original.,6
+68,68,P1,N1-ELEC_ET5,Electricidad,2027-02-10,2027-02-16,5,159,No crítica,67:FS,,Dependencias reconstruidas; conservar duración original.,7
+69,69,P1,N1-ABERT INT_ET2,Aberturas interiores,2027-02-17,2027-02-19,3,159,No crítica,68:FS,,Dependencias reconstruidas; conservar duración original.,7
+70,70,P1,N1-EQUIP_ET1,Equipamiento,2027-02-10,2027-02-12,3,155,No crítica,67:FS,,Dependencias reconstruidas; conservar duración original.,7
+71,71,P1,N1-REVEST&SOLADOS_ET4,Revestimientos y solados,2027-02-15,2027-02-17,3,155,No crítica,70:FS,,Dependencias reconstruidas; conservar duración original.,7
+72,72,P1,N1-EQUIP_ET2,Equipamiento,2027-02-15,2027-02-19,5,156,No crítica,70:FS,,Dependencias reconstruidas; conservar duración original.,7
+73,73,P1,N1-RADIADORES_ET3,Radiadores,2027-02-22,2027-02-24,3,156,No crítica,72:FS,,Dependencias reconstruidas; conservar duración original.,8
+74,74,P1,N1-MARMOLERIA_ET2,Marmolería,2027-02-18,2027-02-22,3,155,No crítica,71:FS; 65:FS,,Dependencias reconstruidas; conservar duración original.,8
+75,75,P1,N1-GAS_ET3,Gas,2027-02-23,2027-02-25,3,155,No crítica,74:FS,,Dependencias reconstruidas; conservar duración original.,8
+76,76,P1,N1-SANIT_ET2,Sanitaria,2027-02-23,2027-02-25,3,155,No crítica,74:FS,,Dependencias reconstruidas; conservar duración original.,8
+77,77,P1,N1-ZOCALOS_ET1,Zócalos,2027-02-22,2027-02-24,3,156,No crítica,72:FS,,Dependencias reconstruidas; conservar duración original.,8
+78,78,P1,N1-PIN INT_ET2,Pintura interior,2027-02-26,2027-03-04,5,155,No crítica,75:FS; 76:FS; 73:FS; 77:FS; 69:FS,,Dependencias reconstruidas; conservar duración original.,9
+79,79,P1,N1-ABER EXT_ET3,Aberturas exteriores,2027-03-05,2027-03-05,1,155,No crítica,78:FS,,Dependencias reconstruidas; conservar duración original.,10
+80,80,P1,N1-Limpieza Final_,Entrega y cierre,2027-03-08,2027-03-10,3,155,No crítica,79:FS,,Dependencias reconstruidas; conservar duración original.,10
+81,81,P1,N1-CheckList_,Entrega y cierre,2027-02-24,2027-02-24,0,160,No crítica,73:FS; 77:FS,,Checklist intermedio conservado; cierre de pendientes antes de entrega.,8
+82,82,P1,N1-Puesta a punto_,Entrega y cierre,2027-02-25,2027-03-03,5,160,No crítica,81:FS,,Dependencias reconstruidas; conservar duración original.,9
+83,83,P1,N1-Entrega_,Entrega y cierre,2027-03-10,2027-03-10,0,155,No crítica,80:FS; 82:FS; 64:FS,,"Entrega de sector, no habilitación para ocupar.",11
+86,86,P2,P2 - ET2: premarcos y revoques interiores,Albañilería,2026-11-16,2026-11-20,5,0,Crítica modelo,44:FS,,Ancla P1 fin 13/11/26; cadencia 5 días laborables. Cierre 24/12/26 al 10/01/27 inclusive; reinicio 11/01/27.,3
+92,92,P2,"P2 - ET3: tapados, marcos y espacios técnicos",Albañilería,2026-11-23,2026-12-04,10,150,No crítica,86:FS; 93:FS,,"10 días originales, DESPUÉS de ET2 y contrapiso. Solape entre pisos exige frentes/cuadrillas suficientes.",4
+93,93,P2,P2 - Contrapiso terminado,Bombeo de contrapiso,2026-11-20,2026-11-20,0,150,No crítica,L2:FS,,Fecha propuesta por continuidad del tren. Se conserva hito de duración cero del original; no representa la duración del bombeo.,3
+94,94,P2,N2-YES_ET1,Yesería,2026-12-07,2026-12-11,5,150,No crítica,92:FS,,Dependencias reconstruidas; conservar duración original.,4
+95,95,P2,N2-ELEC_ET3,Electricidad,2026-12-14,2026-12-14,1,150,No crítica,94:FS,,Dependencias reconstruidas; conservar duración original.,4
+96,96,P2,N2-AA_ET2,Aire acondicionado,2026-12-14,2026-12-14,1,150,No crítica,94:FS,,Dependencias reconstruidas; conservar duración original.,4
+97,97,P2,N2-YES_ET2,Yesería,2026-12-14,2026-12-18,5,150,No crítica,95:SS; 96:SS,,Dependencias reconstruidas; conservar duración original.,4
+98,98,P2,N2-ELEC_ET4,Electricidad,2026-12-21,2027-01-12,5,150,No crítica,97:FS,,Dependencias reconstruidas; conservar duración original.,4
+99,99,P2,N2-IMP.LOCAL HUM_ET1,Impermeabilización,2026-12-21,2026-12-23,3,152,No crítica,97:FS,,Dependencias reconstruidas; conservar duración original.,4
+100,100,P2,N2-FA_PIN EXT_ET1,Pintura exterior,2026-12-07,2026-12-10,4,201,No crítica,92:FS,,Dependencias reconstruidas; conservar duración original.,4
+101,101,P2,N2-FA_HER PESADA_ET1,Herrería y barandas,2026-12-11,2026-12-14,2,201,No crítica,100:FS,,Dependencias reconstruidas; conservar duración original.,4
+102,102,P2,N2-REVEST&SOLADOS_ET1,Revestimientos y solados,2027-01-13,2027-01-19,5,150,No crítica,98:FS; 99:FS,,Dependencias reconstruidas; conservar duración original.,5
+103,103,P2,N2-REVEST&SOLADOS_ET2,Revestimientos y solados,2027-01-20,2027-01-26,5,150,No crítica,102:FS,,Dependencias reconstruidas; conservar duración original.,5
+104,104,P2,N2-REVEST&SOLADOS_ET3,Revestimientos y solados,2027-01-27,2027-02-02,5,150,No crítica,103:FS,,Dependencias reconstruidas; conservar duración original.,6
+105,105,P2,N2-FA_BARANDAS DEFINITIVAS,Herrería y barandas,2027-01-20,2027-01-21,2,187,No crítica,102:FS; 101:FS,,Dependencias reconstruidas; conservar duración original.,5
+106,106,P2,N2-FA_PIN EXT_ET2,Pintura exterior,2027-01-22,2027-01-25,2,187,No crítica,105:FS,,Dependencias reconstruidas; conservar duración original.,6
+107,107,P2,N2-MARMOLERIA_ET1,Marmolería,2027-01-20,2027-01-22,3,173,No crítica,102:FS,,Dependencias reconstruidas; conservar duración original.,5
+108,108,P2,N2-PIN INT_ET1,Pintura interior,2027-02-03,2027-02-09,5,150,No crítica,104:FS,,Dependencias reconstruidas; conservar duración original.,6
+109,109,P2,N2-ABERT EXT_ET2,Aberturas exteriores,2027-02-10,2027-02-16,5,150,No crítica,108:FS,,Dependencias reconstruidas; conservar duración original.,6
+110,110,P2,N2-ELEC_ET5,Electricidad,2027-02-17,2027-02-23,5,154,No crítica,109:FS,,Dependencias reconstruidas; conservar duración original.,7
+111,111,P2,N2-ABERT INT_ET2,Aberturas interiores,2027-02-24,2027-02-26,3,154,No crítica,110:FS,,Dependencias reconstruidas; conservar duración original.,7
+112,112,P2,N2-EQUIP_ET1,Equipamiento,2027-02-17,2027-02-19,3,150,No crítica,109:FS,,Dependencias reconstruidas; conservar duración original.,7
+113,113,P2,N2-REVEST&SOLADOS_ET4,Revestimientos y solados,2027-02-22,2027-02-24,3,150,No crítica,112:FS,,Dependencias reconstruidas; conservar duración original.,7
+114,114,P2,N2-EQUIP_ET2,Equipamiento,2027-02-22,2027-02-26,5,151,No crítica,112:FS,,Dependencias reconstruidas; conservar duración original.,7
+115,115,P2,N2-RADIADORES_ET3,Radiadores,2027-03-01,2027-03-03,3,151,No crítica,114:FS,,Dependencias reconstruidas; conservar duración original.,8
+116,116,P2,N2-MARMOLERIA_ET2,Marmolería,2027-02-25,2027-03-01,3,150,No crítica,113:FS; 107:FS,,Dependencias reconstruidas; conservar duración original.,8
+117,117,P2,N2-GAS_ET3,Gas,2027-03-02,2027-03-04,3,150,No crítica,116:FS,,Dependencias reconstruidas; conservar duración original.,8
+118,118,P2,N2-SANIT_ET2,Sanitaria,2027-03-02,2027-03-04,3,150,No crítica,116:FS,,Dependencias reconstruidas; conservar duración original.,8
+119,119,P2,N2-ZOCALOS_ET1,Zócalos,2027-03-01,2027-03-03,3,151,No crítica,114:FS,,Dependencias reconstruidas; conservar duración original.,8
+120,120,P2,N2-PIN INT_ET2,Pintura interior,2027-03-05,2027-03-11,5,150,No crítica,117:FS; 118:FS; 115:FS; 119:FS; 111:FS,,Dependencias reconstruidas; conservar duración original.,9
+121,121,P2,N2-ABER EXT_ET3,Aberturas exteriores,2027-03-12,2027-03-12,1,150,No crítica,120:FS,,Dependencias reconstruidas; conservar duración original.,10
+122,122,P2,N2-Limpieza Final_,Entrega y cierre,2027-03-15,2027-03-17,3,150,No crítica,121:FS,,Dependencias reconstruidas; conservar duración original.,10
+123,123,P2,N2-CheckList_,Entrega y cierre,2027-03-03,2027-03-03,0,155,No crítica,115:FS; 119:FS,,Checklist intermedio conservado; cierre de pendientes antes de entrega.,8
+124,124,P2,N2-Puesta a punto_,Entrega y cierre,2027-03-04,2027-03-10,5,155,No crítica,123:FS,,Dependencias reconstruidas; conservar duración original.,9
+125,125,P2,N2-Entrega_,Entrega y cierre,2027-03-17,2027-03-17,0,150,No crítica,122:FS; 124:FS; 106:FS,,"Entrega de sector, no habilitación para ocupar.",11
+128,128,P3,P3 - ET2: premarcos y revoques interiores,Albañilería,2026-11-23,2026-11-27,5,0,Crítica modelo,86:FS,,Ancla P1 fin 13/11/26; cadencia 5 días laborables. Cierre 24/12/26 al 10/01/27 inclusive; reinicio 11/01/27.,4
+134,134,P3,"P3 - ET3: tapados, marcos y espacios técnicos",Albañilería,2026-11-30,2026-12-11,10,145,No crítica,128:FS; 135:FS,,"10 días originales, DESPUÉS de ET2 y contrapiso. Solape entre pisos exige frentes/cuadrillas suficientes.",4
+135,135,P3,P3 - Contrapiso terminado,Bombeo de contrapiso,2026-11-27,2026-11-27,0,145,No crítica,L3:FS,,Fecha propuesta por continuidad del tren. Se conserva hito de duración cero del original; no representa la duración del bombeo.,3
+136,136,P3,N3-YES_ET1,Yesería,2026-12-14,2026-12-18,5,145,No crítica,134:FS,,Dependencias reconstruidas; conservar duración original.,4
+137,137,P3,N3-ELEC_ET3,Electricidad,2026-12-21,2026-12-21,1,145,No crítica,136:FS,,Dependencias reconstruidas; conservar duración original.,4
+138,138,P3,N3-AA_ET2,Aire acondicionado,2026-12-21,2026-12-21,1,145,No crítica,136:FS,,Dependencias reconstruidas; conservar duración original.,4
+139,139,P3,N3-YES_ET2,Yesería,2026-12-21,2027-01-12,5,145,No crítica,137:SS; 138:SS,,Dependencias reconstruidas; conservar duración original.,5
+140,140,P3,N3-ELEC_ET4,Electricidad,2027-01-13,2027-01-19,5,145,No crítica,139:FS,,Dependencias reconstruidas; conservar duración original.,5
+141,141,P3,N3-IMP.LOCAL HUM_ET1,Impermeabilización,2027-01-13,2027-01-15,3,147,No crítica,139:FS,,Dependencias reconstruidas; conservar duración original.,5
+142,142,P3,N3-FA_PIN EXT_ET1,Pintura exterior,2026-12-14,2026-12-17,4,196,No crítica,134:FS,,Dependencias reconstruidas; conservar duración original.,4
+143,143,P3,N3-FA_HER PESADA_ET1,Herrería y barandas,2026-12-18,2026-12-21,2,196,No crítica,142:FS,,Dependencias reconstruidas; conservar duración original.,4
+144,144,P3,N3-REVEST&SOLADOS_ET1,Revestimientos y solados,2027-01-20,2027-01-26,5,145,No crítica,140:FS; 141:FS,,Dependencias reconstruidas; conservar duración original.,5
+145,145,P3,N3-REVEST&SOLADOS_ET2,Revestimientos y solados,2027-01-27,2027-02-02,5,145,No crítica,144:FS,,Dependencias reconstruidas; conservar duración original.,6
+146,146,P3,N3-REVEST&SOLADOS_ET3,Revestimientos y solados,2027-02-03,2027-02-09,5,145,No crítica,145:FS,,Dependencias reconstruidas; conservar duración original.,6
+147,147,P3,N3-FA_BARANDAS DEFINITIVAS,Herrería y barandas,2027-01-27,2027-01-28,2,182,No crítica,144:FS; 143:FS,,Dependencias reconstruidas; conservar duración original.,6
+148,148,P3,N3-FA_PIN EXT_ET2,Pintura exterior,2027-01-29,2027-02-01,2,182,No crítica,147:FS,,Dependencias reconstruidas; conservar duración original.,6
+149,149,P3,N3-MARMOLERIA_ET1,Marmolería,2027-01-27,2027-01-29,3,168,No crítica,144:FS,,Dependencias reconstruidas; conservar duración original.,6
+150,150,P3,N3-PIN INT_ET1,Pintura interior,2027-02-10,2027-02-16,5,145,No crítica,146:FS,,Dependencias reconstruidas; conservar duración original.,7
+151,151,P3,N3-ABERT EXT_ET2,Aberturas exteriores,2027-02-17,2027-02-23,5,145,No crítica,150:FS,,Dependencias reconstruidas; conservar duración original.,7
+152,152,P3,N3-ELEC_ET5,Electricidad,2027-02-24,2027-03-02,5,149,No crítica,151:FS,,Dependencias reconstruidas; conservar duración original.,7
+153,153,P3,N3-ABERT INT_ET2,Aberturas interiores,2027-03-03,2027-03-05,3,149,No crítica,152:FS,,Dependencias reconstruidas; conservar duración original.,8
+154,154,P3,N3-EQUIP_ET1,Equipamiento,2027-02-24,2027-02-26,3,145,No crítica,151:FS,,Dependencias reconstruidas; conservar duración original.,7
+155,155,P3,N3-REVEST&SOLADOS_ET4,Revestimientos y solados,2027-03-01,2027-03-03,3,145,No crítica,154:FS,,Dependencias reconstruidas; conservar duración original.,8
+156,156,P3,N3-EQUIP_ET2,Equipamiento,2027-03-01,2027-03-05,5,146,No crítica,154:FS,,Dependencias reconstruidas; conservar duración original.,8
+157,157,P3,N3-RADIADORES_ET3,Radiadores,2027-03-08,2027-03-10,3,146,No crítica,156:FS,,Dependencias reconstruidas; conservar duración original.,8
+158,158,P3,N3-MARMOLERIA_ET2,Marmolería,2027-03-04,2027-03-08,3,145,No crítica,155:FS; 149:FS,,Dependencias reconstruidas; conservar duración original.,9
+159,159,P3,N3-GAS_ET3,Gas,2027-03-09,2027-03-11,3,145,No crítica,158:FS,,Dependencias reconstruidas; conservar duración original.,9
+160,160,P3,N3-SANIT_ET2,Sanitaria,2027-03-09,2027-03-11,3,145,No crítica,158:FS,,Dependencias reconstruidas; conservar duración original.,9
+161,161,P3,N3-ZOCALOS_ET1,Zócalos,2027-03-08,2027-03-10,3,146,No crítica,156:FS,,Dependencias reconstruidas; conservar duración original.,9
+162,162,P3,N3-PIN INT_ET2,Pintura interior,2027-03-12,2027-03-18,5,145,No crítica,159:FS; 160:FS; 157:FS; 161:FS; 153:FS,,Dependencias reconstruidas; conservar duración original.,10
+163,163,P3,N3-ABER EXT_ET3,Aberturas exteriores,2027-03-19,2027-03-19,1,145,No crítica,162:FS,,Dependencias reconstruidas; conservar duración original.,10
+164,164,P3,N3-Limpieza Final_,Entrega y cierre,2027-03-22,2027-03-24,3,145,No crítica,163:FS,,Dependencias reconstruidas; conservar duración original.,11
+165,165,P3,N3-CheckList_,Entrega y cierre,2027-03-10,2027-03-10,0,150,No crítica,157:FS; 161:FS,,Checklist intermedio conservado; cierre de pendientes antes de entrega.,9
+166,166,P3,N3-Puesta a punto_,Entrega y cierre,2027-03-11,2027-03-17,5,150,No crítica,165:FS,,Dependencias reconstruidas; conservar duración original.,10
+167,167,P3,N3-Entrega_,Entrega y cierre,2027-03-24,2027-03-24,0,145,No crítica,164:FS; 166:FS; 148:FS,,"Entrega de sector, no habilitación para ocupar.",11
+174,174,P4,P4 - ET2: premarcos y revoques interiores,Albañilería,2026-11-30,2026-12-04,5,0,Crítica modelo,128:FS,,Ancla P1 fin 13/11/26; cadencia 5 días laborables. Cierre 24/12/26 al 10/01/27 inclusive; reinicio 11/01/27.,4
+180,180,P4,"P4 - ET3: tapados, marcos y espacios técnicos",Albañilería,2026-12-07,2026-12-18,10,140,No crítica,174:FS; 181:FS,,"10 días originales, DESPUÉS de ET2 y contrapiso. Solape entre pisos exige frentes/cuadrillas suficientes.",4
+181,181,P4,P4 - Contrapiso terminado,Bombeo de contrapiso,2026-12-04,2026-12-04,0,140,No crítica,L4:FS,,Fecha propuesta por continuidad del tren. Se conserva hito de duración cero del original; no representa la duración del bombeo.,3
+182,182,P4,N4-YES_ET1,Yesería,2026-12-21,2027-01-12,5,140,No crítica,180:FS,,Dependencias reconstruidas; conservar duración original.,4
+183,183,P4,N4-ELEC_ET3,Electricidad,2027-01-13,2027-01-13,1,140,No crítica,182:FS,,Dependencias reconstruidas; conservar duración original.,5
+184,184,P4,N4-AA_ET2,Aire acondicionado,2027-01-13,2027-01-13,1,140,No crítica,182:FS,,Dependencias reconstruidas; conservar duración original.,5
+185,185,P4,N4-YES_ET2,Yesería,2027-01-13,2027-01-19,5,140,No crítica,183:SS; 184:SS,,Dependencias reconstruidas; conservar duración original.,5
+186,186,P4,N4-ELEC_ET4,Electricidad,2027-01-20,2027-01-26,5,140,No crítica,185:FS,,Dependencias reconstruidas; conservar duración original.,5
+187,187,P4,N4-IMP.LOCAL HUM_ET1,Impermeabilización,2027-01-20,2027-01-22,3,142,No crítica,185:FS,,Dependencias reconstruidas; conservar duración original.,5
+188,188,P4,N4-FA_PIN EXT_ET1,Pintura exterior,2026-12-21,2027-01-11,4,191,No crítica,180:FS,,Dependencias reconstruidas; conservar duración original.,4
+189,189,P4,N4-FA_HER PESADA_ET1,Herrería y barandas,2027-01-12,2027-01-13,2,191,No crítica,188:FS,,Dependencias reconstruidas; conservar duración original.,5
+190,190,P4,N4-REVEST&SOLADOS_ET1,Revestimientos y solados,2027-01-27,2027-02-02,5,140,No crítica,186:FS; 187:FS,,Dependencias reconstruidas; conservar duración original.,6
+191,191,P4,N4-REVEST&SOLADOS_ET2,Revestimientos y solados,2027-02-03,2027-02-09,5,140,No crítica,190:FS,,Dependencias reconstruidas; conservar duración original.,6
+192,192,P4,N4-REVEST&SOLADOS_ET3,Revestimientos y solados,2027-02-10,2027-02-16,5,140,No crítica,191:FS,,Dependencias reconstruidas; conservar duración original.,7
+193,193,P4,N4-FA_BARANDAS DEFINITIVAS,Herrería y barandas,2027-02-03,2027-02-04,2,177,No crítica,190:FS; 189:FS,,Dependencias reconstruidas; conservar duración original.,6
+194,194,P4,N4-FA_PIN EXT_ET2,Pintura exterior,2027-02-05,2027-02-08,2,177,No crítica,193:FS,,Dependencias reconstruidas; conservar duración original.,7
+195,195,P4,N4-MARMOLERIA_ET1,Marmolería,2027-02-03,2027-02-05,3,163,No crítica,190:FS,,Dependencias reconstruidas; conservar duración original.,6
+196,196,P4,N4-PIN INT_ET1,Pintura interior,2027-02-17,2027-02-23,5,140,No crítica,192:FS,,Dependencias reconstruidas; conservar duración original.,7
+197,197,P4,N4-ABERT EXT_ET2,Aberturas exteriores,2027-02-24,2027-03-02,5,140,No crítica,196:FS,,Dependencias reconstruidas; conservar duración original.,7
+198,198,P4,N4-ELEC_ET5,Electricidad,2027-03-03,2027-03-09,5,144,No crítica,197:FS,,Dependencias reconstruidas; conservar duración original.,8
+199,199,P4,N4-ABERT INT_ET2,Aberturas interiores,2027-03-10,2027-03-12,3,144,No crítica,198:FS,,Dependencias reconstruidas; conservar duración original.,9
+200,200,P4,N4-EQUIP_ET1,Equipamiento,2027-03-03,2027-03-05,3,140,No crítica,197:FS,,Dependencias reconstruidas; conservar duración original.,8
+201,201,P4,N4-REVEST&SOLADOS_ET4,Revestimientos y solados,2027-03-08,2027-03-10,3,140,No crítica,200:FS,,Dependencias reconstruidas; conservar duración original.,9
+202,202,P4,N4-EQUIP_ET2,Equipamiento,2027-03-08,2027-03-12,5,141,No crítica,200:FS,,Dependencias reconstruidas; conservar duración original.,9
+203,203,P4,N4-RADIADORES_ET3,Radiadores,2027-03-15,2027-03-17,3,141,No crítica,202:FS,,Dependencias reconstruidas; conservar duración original.,9
+204,204,P4,N4-MARMOLERIA_ET2,Marmolería,2027-03-11,2027-03-15,3,140,No crítica,201:FS; 195:FS,,Dependencias reconstruidas; conservar duración original.,9
+205,205,P4,N4-GAS_ET3,Gas,2027-03-16,2027-03-18,3,140,No crítica,204:FS,,Dependencias reconstruidas; conservar duración original.,10
+206,206,P4,N4-SANIT_ET2,Sanitaria,2027-03-16,2027-03-18,3,140,No crítica,204:FS,,Dependencias reconstruidas; conservar duración original.,10
+207,207,P4,N4-ZOCALOS_ET1,Zócalos,2027-03-15,2027-03-17,3,141,No crítica,202:FS,,Dependencias reconstruidas; conservar duración original.,9
+208,208,P4,N4-PIN INT_ET2,Pintura interior,2027-03-19,2027-03-25,5,140,No crítica,205:FS; 206:FS; 203:FS; 207:FS; 199:FS,,Dependencias reconstruidas; conservar duración original.,10
+209,209,P4,N4-ABER EXT_ET3,Aberturas exteriores,2027-03-26,2027-03-26,1,140,No crítica,208:FS,,Dependencias reconstruidas; conservar duración original.,11
+210,210,P4,N4-Limpieza Final_,Entrega y cierre,2027-03-29,2027-03-31,3,140,No crítica,209:FS,,Dependencias reconstruidas; conservar duración original.,11
+211,211,P4,N4-CheckList_,Entrega y cierre,2027-03-17,2027-03-17,0,145,No crítica,203:FS; 207:FS,,Checklist intermedio conservado; cierre de pendientes antes de entrega.,10
+212,212,P4,N4-Puesta a punto_,Entrega y cierre,2027-03-18,2027-03-24,5,145,No crítica,211:FS,,Dependencias reconstruidas; conservar duración original.,10
+213,213,P4,N4-Entrega_,Entrega y cierre,2027-03-31,2027-03-31,0,140,No crítica,210:FS; 212:FS; 194:FS,,"Entrega de sector, no habilitación para ocupar.",11
+216,216,P5,P5 - ET2: premarcos y revoques interiores,Albañilería,2026-12-07,2026-12-11,5,0,Crítica modelo,174:FS,,Ancla P1 fin 13/11/26; cadencia 5 días laborables. Cierre 24/12/26 al 10/01/27 inclusive; reinicio 11/01/27.,4
+222,222,P5,"P5 - ET3: tapados, marcos y espacios técnicos",Albañilería,2026-12-14,2027-01-12,10,135,No crítica,216:FS; 223:FS,,"10 días originales, DESPUÉS de ET2 y contrapiso. Solape entre pisos exige frentes/cuadrillas suficientes.",4
+223,223,P5,P5 - Contrapiso terminado,Bombeo de contrapiso,2026-11-27,2026-11-27,0,145,No crítica,L5:FS,,OBLIGATORIO: 27/11/26. Se conserva hito de duración cero del original; no representa la duración del bombeo.,3
+224,224,P5,N5-YES_ET1,Yesería,2027-01-13,2027-01-19,5,135,No crítica,222:FS,,Dependencias reconstruidas; conservar duración original.,5
+225,225,P5,N5-ELEC_ET3,Electricidad,2027-01-20,2027-01-20,1,135,No crítica,224:FS,,Dependencias reconstruidas; conservar duración original.,5
+226,226,P5,N5-AA_ET2,Aire acondicionado,2027-01-20,2027-01-20,1,135,No crítica,224:FS,,Dependencias reconstruidas; conservar duración original.,5
+227,227,P5,N5-YES_ET2,Yesería,2027-01-20,2027-01-26,5,135,No crítica,225:SS; 226:SS,,Dependencias reconstruidas; conservar duración original.,5
+228,228,P5,N5-ELEC_ET4,Electricidad,2027-01-27,2027-02-02,5,135,No crítica,227:FS,,Dependencias reconstruidas; conservar duración original.,6
+229,229,P5,N5-IMP.LOCAL HUM_ET1,Impermeabilización,2027-01-27,2027-01-29,3,137,No crítica,227:FS,,Dependencias reconstruidas; conservar duración original.,6
+230,230,P5,N5-FA_PIN EXT_ET1,Pintura exterior,2027-01-13,2027-01-18,4,186,No crítica,222:FS,,Dependencias reconstruidas; conservar duración original.,5
+231,231,P5,N5-FA_HER PESADA_ET1,Herrería y barandas,2027-01-19,2027-01-20,2,186,No crítica,230:FS,,Dependencias reconstruidas; conservar duración original.,5
+232,232,P5,N5-REVEST&SOLADOS_ET1,Revestimientos y solados,2027-02-03,2027-02-09,5,135,No crítica,228:FS; 229:FS,,Dependencias reconstruidas; conservar duración original.,6
+233,233,P5,N5-REVEST&SOLADOS_ET2,Revestimientos y solados,2027-02-10,2027-02-16,5,135,No crítica,232:FS,,Dependencias reconstruidas; conservar duración original.,7
+234,234,P5,N5-REVEST&SOLADOS_ET3,Revestimientos y solados,2027-02-17,2027-02-23,5,135,No crítica,233:FS,,Dependencias reconstruidas; conservar duración original.,7
+235,235,P5,N5-FA_BARANDAS DEFINITIVAS,Herrería y barandas,2027-02-10,2027-02-11,2,172,No crítica,232:FS; 231:FS,,Dependencias reconstruidas; conservar duración original.,7
+236,236,P5,N5-FA_PIN EXT_ET2,Pintura exterior,2027-02-12,2027-02-15,2,172,No crítica,235:FS,,Dependencias reconstruidas; conservar duración original.,7
+237,237,P5,N5-MARMOLERIA_ET1,Marmolería,2027-02-10,2027-02-12,3,158,No crítica,232:FS,,Dependencias reconstruidas; conservar duración original.,7
+238,238,P5,N5-PIN INT_ET1,Pintura interior,2027-02-24,2027-03-02,5,135,No crítica,234:FS,,Dependencias reconstruidas; conservar duración original.,8
+239,239,P5,N5-ABERT EXT_ET2,Aberturas exteriores,2027-03-03,2027-03-09,5,135,No crítica,238:FS,,Dependencias reconstruidas; conservar duración original.,8
+240,240,P5,N5-ELEC_ET5,Electricidad,2027-03-10,2027-03-16,5,139,No crítica,239:FS,,Dependencias reconstruidas; conservar duración original.,9
+241,241,P5,N5-ABERT INT_ET2,Aberturas interiores,2027-03-17,2027-03-19,3,139,No crítica,240:FS,,Dependencias reconstruidas; conservar duración original.,9
+242,242,P5,N5-EQUIP_ET1,Equipamiento,2027-03-10,2027-03-12,3,135,No crítica,239:FS,,Dependencias reconstruidas; conservar duración original.,9
+243,243,P5,N5-REVEST&SOLADOS_ET4,Revestimientos y solados,2027-03-15,2027-03-17,3,135,No crítica,242:FS,,Dependencias reconstruidas; conservar duración original.,9
+244,244,P5,N5-EQUIP_ET2,Equipamiento,2027-03-15,2027-03-19,5,136,No crítica,242:FS,,Dependencias reconstruidas; conservar duración original.,9
+245,245,P5,N5-RADIADORES_ET3,Radiadores,2027-03-22,2027-03-24,3,136,No crítica,244:FS,,Dependencias reconstruidas; conservar duración original.,10
+246,246,P5,N5-MARMOLERIA_ET2,Marmolería,2027-03-18,2027-03-22,3,135,No crítica,243:FS; 237:FS,,Dependencias reconstruidas; conservar duración original.,10
+247,247,P5,N5-GAS_ET3,Gas,2027-03-23,2027-03-25,3,135,No crítica,246:FS,,Dependencias reconstruidas; conservar duración original.,10
+248,248,P5,N5-SANIT_ET2,Sanitaria,2027-03-23,2027-03-25,3,135,No crítica,246:FS,,Dependencias reconstruidas; conservar duración original.,10
+249,249,P5,N5-ZOCALOS_ET1,Zócalos,2027-03-22,2027-03-24,3,136,No crítica,244:FS,,Dependencias reconstruidas; conservar duración original.,10
+250,250,P5,N5-PIN INT_ET2,Pintura interior,2027-03-26,2027-04-01,5,135,No crítica,247:FS; 248:FS; 245:FS; 249:FS; 241:FS,,Dependencias reconstruidas; conservar duración original.,11
+251,251,P5,N5-ABER EXT_ET3,Aberturas exteriores,2027-04-02,2027-04-02,1,135,No crítica,250:FS,,Dependencias reconstruidas; conservar duración original.,11
+252,252,P5,N5-Limpieza Final_,Entrega y cierre,2027-04-05,2027-04-07,3,135,No crítica,251:FS,,Dependencias reconstruidas; conservar duración original.,11
+253,253,P5,N5-CheckList_,Entrega y cierre,2027-03-24,2027-03-24,0,140,No crítica,245:FS; 249:FS,,Checklist intermedio conservado; cierre de pendientes antes de entrega.,10
+254,254,P5,N5-Puesta a punto_,Entrega y cierre,2027-03-25,2027-03-31,5,140,No crítica,253:FS,,Dependencias reconstruidas; conservar duración original.,11
+255,255,P5,N5-Entrega_,Entrega y cierre,2027-04-07,2027-04-07,0,135,No crítica,252:FS; 254:FS; 236:FS,,"Entrega de sector, no habilitación para ocupar.",12
+258,258,P6,P6 - ET2: premarcos y revoques interiores,Albañilería,2026-12-14,2026-12-18,5,0,Crítica modelo,216:FS,,Ancla P1 fin 13/11/26; cadencia 5 días laborables. Cierre 24/12/26 al 10/01/27 inclusive; reinicio 11/01/27.,4
+264,264,P6,"P6 - ET3: tapados, marcos y espacios técnicos",Albañilería,2026-12-21,2027-01-19,10,130,No crítica,258:FS; 265:FS,,"10 días originales, DESPUÉS de ET2 y contrapiso. Solape entre pisos exige frentes/cuadrillas suficientes.",5
+265,265,P6,P6 - Contrapiso terminado,Bombeo de contrapiso,2026-11-27,2026-11-27,0,145,No crítica,L6:FS,,OBLIGATORIO: 27/11/26. Se conserva hito de duración cero del original; no representa la duración del bombeo.,3
+266,266,P6,N6-YES_ET1,Yesería,2027-01-20,2027-01-26,5,130,No crítica,264:FS,,Dependencias reconstruidas; conservar duración original.,5
+267,267,P6,N6-ELEC_ET3,Electricidad,2027-01-27,2027-01-27,1,130,No crítica,266:FS,,Dependencias reconstruidas; conservar duración original.,5
+268,268,P6,N6-AA_ET2,Aire acondicionado,2027-01-27,2027-01-27,1,130,No crítica,266:FS,,Dependencias reconstruidas; conservar duración original.,5
+269,269,P6,N6-YES_ET2,Yesería,2027-01-27,2027-02-02,5,130,No crítica,267:SS; 268:SS,,Dependencias reconstruidas; conservar duración original.,6
+270,270,P6,N6-ELEC_ET4,Electricidad,2027-02-03,2027-02-09,5,130,No crítica,269:FS,,Dependencias reconstruidas; conservar duración original.,6
+271,271,P6,N6-IMP.LOCAL HUM_ET1,Impermeabilización,2027-02-03,2027-02-05,3,132,No crítica,269:FS,,Dependencias reconstruidas; conservar duración original.,6
+272,272,P6,N6-FA_PIN EXT_ET1,Pintura exterior,2027-01-20,2027-01-25,4,181,No crítica,264:FS,,Dependencias reconstruidas; conservar duración original.,5
+273,273,P6,N6-FA_HER PESADA_ET1,Herrería y barandas,2027-01-26,2027-01-27,2,181,No crítica,272:FS,,Dependencias reconstruidas; conservar duración original.,5
+274,274,P6,N6-REVEST&SOLADOS_ET1,Revestimientos y solados,2027-02-10,2027-02-16,5,130,No crítica,270:FS; 271:FS,,Dependencias reconstruidas; conservar duración original.,7
+275,275,P6,N6-REVEST&SOLADOS_ET2,Revestimientos y solados,2027-02-17,2027-02-23,5,130,No crítica,274:FS,,Dependencias reconstruidas; conservar duración original.,7
+276,276,P6,N6-REVEST&SOLADOS_ET3,Revestimientos y solados,2027-02-24,2027-03-02,5,130,No crítica,275:FS,,Dependencias reconstruidas; conservar duración original.,8
+277,277,P6,N6-FA_BARANDAS DEFINITIVAS,Herrería y barandas,2027-02-17,2027-02-18,2,167,No crítica,274:FS; 273:FS,,Dependencias reconstruidas; conservar duración original.,7
+278,278,P6,N6-FA_PIN EXT_ET2,Pintura exterior,2027-02-19,2027-02-22,2,167,No crítica,277:FS,,Dependencias reconstruidas; conservar duración original.,8
+279,279,P6,N6-MARMOLERIA_ET1,Marmolería,2027-02-17,2027-02-19,3,153,No crítica,274:FS,,Dependencias reconstruidas; conservar duración original.,7
+280,280,P6,N6-PIN INT_ET1,Pintura interior,2027-03-03,2027-03-09,5,130,No crítica,276:FS,,Dependencias reconstruidas; conservar duración original.,8
+281,281,P6,N6-ABERT EXT_ET2,Aberturas exteriores,2027-03-10,2027-03-16,5,130,No crítica,280:FS,,Dependencias reconstruidas; conservar duración original.,9
+282,282,P6,N6-ELEC_ET5,Electricidad,2027-03-17,2027-03-23,5,134,No crítica,281:FS,,Dependencias reconstruidas; conservar duración original.,9
+283,283,P6,N6-ABERT INT_ET2,Aberturas interiores,2027-03-24,2027-03-26,3,134,No crítica,282:FS,,Dependencias reconstruidas; conservar duración original.,10
+284,284,P6,N6-EQUIP_ET1,Equipamiento,2027-03-17,2027-03-19,3,130,No crítica,281:FS,,Dependencias reconstruidas; conservar duración original.,9
+285,285,P6,N6-REVEST&SOLADOS_ET4,Revestimientos y solados,2027-03-22,2027-03-24,3,130,No crítica,284:FS,,Dependencias reconstruidas; conservar duración original.,10
+286,286,P6,N6-EQUIP_ET2,Equipamiento,2027-03-22,2027-03-26,5,131,No crítica,284:FS,,Dependencias reconstruidas; conservar duración original.,10
+287,287,P6,N6-RADIADORES_ET3,Radiadores,2027-03-29,2027-03-31,3,131,No crítica,286:FS,,Dependencias reconstruidas; conservar duración original.,10
+288,288,P6,N6-MARMOLERIA_ET2,Marmolería,2027-03-25,2027-03-29,3,130,No crítica,285:FS; 279:FS,,Dependencias reconstruidas; conservar duración original.,10
+289,289,P6,N6-GAS_ET3,Gas,2027-03-30,2027-04-01,3,130,No crítica,288:FS,,Dependencias reconstruidas; conservar duración original.,11
+290,290,P6,N6-SANIT_ET2,Sanitaria,2027-03-30,2027-04-01,3,130,No crítica,288:FS,,Dependencias reconstruidas; conservar duración original.,11
+291,291,P6,N6-ZOCALOS_ET1,Zócalos,2027-03-29,2027-03-31,3,131,No crítica,286:FS,,Dependencias reconstruidas; conservar duración original.,10
+292,292,P6,N6-PIN INT_ET2,Pintura interior,2027-04-02,2027-04-08,5,130,No crítica,289:FS; 290:FS; 287:FS; 291:FS; 283:FS,,Dependencias reconstruidas; conservar duración original.,11
+293,293,P6,N6-ABER EXT_ET3,Aberturas exteriores,2027-04-09,2027-04-09,1,130,No crítica,292:FS,,Dependencias reconstruidas; conservar duración original.,11
+294,294,P6,N6-Limpieza Final_,Entrega y cierre,2027-04-12,2027-04-14,3,130,No crítica,293:FS,,Dependencias reconstruidas; conservar duración original.,12
+295,295,P6,N6-CheckList_,Entrega y cierre,2027-03-31,2027-03-31,0,135,No crítica,287:FS; 291:FS,,Checklist intermedio conservado; cierre de pendientes antes de entrega.,11
+296,296,P6,N6-Puesta a punto_,Entrega y cierre,2027-04-01,2027-04-07,5,135,No crítica,295:FS,,Dependencias reconstruidas; conservar duración original.,11
+297,297,P6,N6-Entrega_,Entrega y cierre,2027-04-14,2027-04-14,0,130,No crítica,294:FS; 296:FS; 278:FS,,"Entrega de sector, no habilitación para ocupar.",12
+300,300,P7,P7 - ET2: premarcos y revoques interiores,Albañilería,2026-12-21,2027-01-12,5,0,Crítica modelo,258:FS,,Ancla P1 fin 13/11/26; cadencia 5 días laborables. Cierre 24/12/26 al 10/01/27 inclusive; reinicio 11/01/27.,5
+306,306,P7,"P7 - ET3: tapados, marcos y espacios técnicos",Albañilería,2027-01-13,2027-01-26,10,125,No crítica,300:FS; 307:FS,,"10 días originales, DESPUÉS de ET2 y contrapiso. Solape entre pisos exige frentes/cuadrillas suficientes.",5
+307,307,P7,P7 - Contrapiso terminado,Bombeo de contrapiso,2026-12-11,2026-12-11,0,135,No crítica,L7:FS,,Fecha propuesta por continuidad del tren. Se conserva hito de duración cero del original; no representa la duración del bombeo.,3
+308,308,P7,N7-YES_ET1,Yesería,2027-01-27,2027-02-02,5,125,No crítica,306:FS,,Dependencias reconstruidas; conservar duración original.,5
+309,309,P7,N7-ELEC_ET3,Electricidad,2027-02-03,2027-02-03,1,125,No crítica,308:FS,,Dependencias reconstruidas; conservar duración original.,6
+310,310,P7,N7-AA_ET2,Aire acondicionado,2027-02-03,2027-02-03,1,125,No crítica,308:FS,,Dependencias reconstruidas; conservar duración original.,6
+311,311,P7,N7-YES_ET2,Yesería,2027-02-03,2027-02-09,5,125,No crítica,309:SS; 310:SS,,Dependencias reconstruidas; conservar duración original.,6
+312,312,P7,N7-ELEC_ET4,Electricidad,2027-02-10,2027-02-16,5,125,No crítica,311:FS,,Dependencias reconstruidas; conservar duración original.,7
+313,313,P7,N7-IMP.LOCAL HUM_ET1,Impermeabilización,2027-02-10,2027-02-12,3,127,No crítica,311:FS,,Dependencias reconstruidas; conservar duración original.,7
+314,314,P7,N7-FA_PIN EXT_ET1,Pintura exterior,2027-01-27,2027-02-01,4,176,No crítica,306:FS,,Dependencias reconstruidas; conservar duración original.,5
+315,315,P7,N7-FA_HER PESADA_ET1,Herrería y barandas,2027-02-02,2027-02-03,2,176,No crítica,314:FS,,Dependencias reconstruidas; conservar duración original.,6
+316,316,P7,N7-REVEST&SOLADOS_ET1,Revestimientos y solados,2027-02-17,2027-02-23,5,125,No crítica,312:FS; 313:FS,,Dependencias reconstruidas; conservar duración original.,7
+317,317,P7,N7-REVEST&SOLADOS_ET2,Revestimientos y solados,2027-02-24,2027-03-02,5,125,No crítica,316:FS,,Dependencias reconstruidas; conservar duración original.,8
+318,318,P7,N7-REVEST&SOLADOS_ET3,Revestimientos y solados,2027-03-03,2027-03-09,5,125,No crítica,317:FS,,Dependencias reconstruidas; conservar duración original.,8
+319,319,P7,N7-FA_BARANDAS DEFINITIVAS,Herrería y barandas,2027-02-24,2027-02-25,2,162,No crítica,316:FS; 315:FS,,Dependencias reconstruidas; conservar duración original.,8
+320,320,P7,N7-FA_PIN EXT_ET2,Pintura exterior,2027-02-26,2027-03-01,2,162,No crítica,319:FS,,Dependencias reconstruidas; conservar duración original.,8
+321,321,P7,N7-MARMOLERIA_ET1,Marmolería,2027-02-24,2027-02-26,3,148,No crítica,316:FS,,Dependencias reconstruidas; conservar duración original.,8
+322,322,P7,N7-PIN INT_ET1,Pintura interior,2027-03-10,2027-03-16,5,125,No crítica,318:FS,,Dependencias reconstruidas; conservar duración original.,9
+323,323,P7,N7-ABERT EXT_ET2,Aberturas exteriores,2027-03-17,2027-03-23,5,125,No crítica,322:FS,,Dependencias reconstruidas; conservar duración original.,9
+324,324,P7,N7-ELEC_ET5,Electricidad,2027-03-24,2027-03-30,5,129,No crítica,323:FS,,Dependencias reconstruidas; conservar duración original.,10
+325,325,P7,N7-ABERT INT_ET2,Aberturas interiores,2027-03-31,2027-04-02,3,129,No crítica,324:FS,,Dependencias reconstruidas; conservar duración original.,10
+326,326,P7,N7-EQUIP_ET1,Equipamiento,2027-03-24,2027-03-26,3,125,No crítica,323:FS,,Dependencias reconstruidas; conservar duración original.,10
+327,327,P7,N7-REVEST&SOLADOS_ET4,Revestimientos y solados,2027-03-29,2027-03-31,3,125,No crítica,326:FS,,Dependencias reconstruidas; conservar duración original.,10
+328,328,P7,N7-EQUIP_ET2,Equipamiento,2027-03-29,2027-04-02,5,126,No crítica,326:FS,,Dependencias reconstruidas; conservar duración original.,10
+329,329,P7,N7-RADIADORES_ET3,Radiadores,2027-04-05,2027-04-07,3,126,No crítica,328:FS,,Dependencias reconstruidas; conservar duración original.,11
+330,330,P7,N7-MARMOLERIA_ET2,Marmolería,2027-04-01,2027-04-05,3,125,No crítica,327:FS; 321:FS,,Dependencias reconstruidas; conservar duración original.,11
+331,331,P7,N7-GAS_ET3,Gas,2027-04-06,2027-04-08,3,125,No crítica,330:FS,,Dependencias reconstruidas; conservar duración original.,11
+332,332,P7,N7-SANIT_ET2,Sanitaria,2027-04-06,2027-04-08,3,125,No crítica,330:FS,,Dependencias reconstruidas; conservar duración original.,11
+333,333,P7,N7-ZOCALOS_ET1,Zócalos,2027-04-05,2027-04-07,3,126,No crítica,328:FS,,Dependencias reconstruidas; conservar duración original.,11
+334,334,P7,N7-PIN INT_ET2,Pintura interior,2027-04-09,2027-04-15,5,125,No crítica,331:FS; 332:FS; 329:FS; 333:FS; 325:FS,,Dependencias reconstruidas; conservar duración original.,11
+335,335,P7,N7-ABER EXT_ET3,Aberturas exteriores,2027-04-16,2027-04-16,1,125,No crítica,334:FS,,Dependencias reconstruidas; conservar duración original.,12
+336,336,P7,N7-Limpieza Final_,Entrega y cierre,2027-04-19,2027-04-21,3,125,No crítica,335:FS,,Dependencias reconstruidas; conservar duración original.,12
+337,337,P7,N7-CheckList_,Entrega y cierre,2027-04-07,2027-04-07,0,130,No crítica,329:FS; 333:FS,,Checklist intermedio conservado; cierre de pendientes antes de entrega.,11
+338,338,P7,N7-Puesta a punto_,Entrega y cierre,2027-04-08,2027-04-14,5,130,No crítica,337:FS,,Dependencias reconstruidas; conservar duración original.,12
+339,339,P7,N7-Entrega_,Entrega y cierre,2027-04-21,2027-04-21,0,125,No crítica,336:FS; 338:FS; 320:FS,,"Entrega de sector, no habilitación para ocupar.",12
+342,342,P8,P8 - ET2: premarcos y revoques interiores,Albañilería,2027-01-13,2027-01-19,5,0,Crítica modelo,300:FS,,Ancla P1 fin 13/11/26; cadencia 5 días laborables. Cierre 24/12/26 al 10/01/27 inclusive; reinicio 11/01/27.,5
+348,348,P8,"P8 - ET3: tapados, marcos y espacios técnicos",Albañilería,2027-01-20,2027-02-02,10,120,No crítica,342:FS; 349:FS,,"10 días originales, DESPUÉS de ET2 y contrapiso. Solape entre pisos exige frentes/cuadrillas suficientes.",6
+349,349,P8,P8 - Contrapiso terminado,Bombeo de contrapiso,2026-12-18,2026-12-18,0,130,No crítica,L8:FS,,Fecha propuesta por continuidad del tren. Se conserva hito de duración cero del original; no representa la duración del bombeo.,3
+350,350,P8,N8-YES_ET1,Yesería,2027-02-03,2027-02-09,5,120,No crítica,348:FS,,Dependencias reconstruidas; conservar duración original.,6
+351,351,P8,N8-ELEC_ET3,Electricidad,2027-02-10,2027-02-10,1,120,No crítica,350:FS,,Dependencias reconstruidas; conservar duración original.,6
+352,352,P8,N8-AA_ET2,Aire acondicionado,2027-02-10,2027-02-10,1,120,No crítica,350:FS,,Dependencias reconstruidas; conservar duración original.,6
+353,353,P8,N8-YES_ET2,Yesería,2027-02-10,2027-02-16,5,120,No crítica,351:SS; 352:SS,,Dependencias reconstruidas; conservar duración original.,7
+354,354,P8,N8-ELEC_ET4,Electricidad,2027-02-17,2027-02-23,5,120,No crítica,353:FS,,Dependencias reconstruidas; conservar duración original.,7
+355,355,P8,N8-IMP.LOCAL HUM_ET1,Impermeabilización,2027-02-17,2027-02-19,3,122,No crítica,353:FS,,Dependencias reconstruidas; conservar duración original.,7
+356,356,P8,N8-FA_PIN EXT_ET1,Pintura exterior,2027-02-03,2027-02-08,4,171,No crítica,348:FS,,Dependencias reconstruidas; conservar duración original.,6
+357,357,P8,N8-FA_HER PESADA_ET1,Herrería y barandas,2027-02-09,2027-02-10,2,171,No crítica,356:FS,,Dependencias reconstruidas; conservar duración original.,6
+358,358,P8,N8-REVEST&SOLADOS_ET1,Revestimientos y solados,2027-02-24,2027-03-02,5,120,No crítica,354:FS; 355:FS,,Dependencias reconstruidas; conservar duración original.,8
+359,359,P8,N8-REVEST&SOLADOS_ET2,Revestimientos y solados,2027-03-03,2027-03-09,5,120,No crítica,358:FS,,Dependencias reconstruidas; conservar duración original.,8
+360,360,P8,N8-REVEST&SOLADOS_ET3,Revestimientos y solados,2027-03-10,2027-03-16,5,120,No crítica,359:FS,,Dependencias reconstruidas; conservar duración original.,9
+361,361,P8,N8-FA_BARANDAS DEFINITIVAS,Herrería y barandas,2027-03-03,2027-03-04,2,157,No crítica,358:FS; 357:FS,,Dependencias reconstruidas; conservar duración original.,8
+362,362,P8,N8-FA_PIN EXT_ET2,Pintura exterior,2027-03-05,2027-03-08,2,157,No crítica,361:FS,,Dependencias reconstruidas; conservar duración original.,9
+363,363,P8,N8-MARMOLERIA_ET1,Marmolería,2027-03-03,2027-03-05,3,143,No crítica,358:FS,,Dependencias reconstruidas; conservar duración original.,8
+364,364,P8,N8-PIN INT_ET1,Pintura interior,2027-03-17,2027-03-23,5,120,No crítica,360:FS,,Dependencias reconstruidas; conservar duración original.,9
+365,365,P8,N8-ABERT EXT_ET2,Aberturas exteriores,2027-03-24,2027-03-30,5,120,No crítica,364:FS,,Dependencias reconstruidas; conservar duración original.,10
+366,366,P8,N8-ELEC_ET5,Electricidad,2027-03-31,2027-04-06,5,124,No crítica,365:FS,,Dependencias reconstruidas; conservar duración original.,10
+367,367,P8,N8-ABERT INT_ET2,Aberturas interiores,2027-04-07,2027-04-09,3,124,No crítica,366:FS,,Dependencias reconstruidas; conservar duración original.,11
+368,368,P8,N8-EQUIP_ET1,Equipamiento,2027-03-31,2027-04-02,3,120,No crítica,365:FS,,Dependencias reconstruidas; conservar duración original.,10
+369,369,P8,N8-REVEST&SOLADOS_ET4,Revestimientos y solados,2027-04-05,2027-04-07,3,120,No crítica,368:FS,,Dependencias reconstruidas; conservar duración original.,11
+370,370,P8,N8-EQUIP_ET2,Equipamiento,2027-04-05,2027-04-09,5,121,No crítica,368:FS,,Dependencias reconstruidas; conservar duración original.,11
+371,371,P8,N8-RADIADORES_ET3,Radiadores,2027-04-12,2027-04-14,3,121,No crítica,370:FS,,Dependencias reconstruidas; conservar duración original.,11
+372,372,P8,N8-MARMOLERIA_ET2,Marmolería,2027-04-08,2027-04-12,3,120,No crítica,369:FS; 363:FS,,Dependencias reconstruidas; conservar duración original.,11
+373,373,P8,N8-GAS_ET3,Gas,2027-04-13,2027-04-15,3,120,No crítica,372:FS,,Dependencias reconstruidas; conservar duración original.,12
+374,374,P8,N8-SANIT_ET2,Sanitaria,2027-04-13,2027-04-15,3,120,No crítica,372:FS,,Dependencias reconstruidas; conservar duración original.,12
+375,375,P8,N8-ZOCALOS_ET1,Zócalos,2027-04-12,2027-04-14,3,121,No crítica,370:FS,,Dependencias reconstruidas; conservar duración original.,11
+376,376,P8,N8-PIN INT_ET2,Pintura interior,2027-04-16,2027-04-22,5,120,No crítica,373:FS; 374:FS; 371:FS; 375:FS; 367:FS,,Dependencias reconstruidas; conservar duración original.,12
+377,377,P8,N8-ABER EXT_ET3,Aberturas exteriores,2027-04-23,2027-04-23,1,120,No crítica,376:FS,,Dependencias reconstruidas; conservar duración original.,12
+378,378,P8,N8-Limpieza Final_,Entrega y cierre,2027-04-26,2027-04-28,3,120,No crítica,377:FS,,Dependencias reconstruidas; conservar duración original.,12
+379,379,P8,N8-CheckList_,Entrega y cierre,2027-04-14,2027-04-14,0,125,No crítica,371:FS; 375:FS,,Checklist intermedio conservado; cierre de pendientes antes de entrega.,12
+380,380,P8,N8-Puesta a punto_,Entrega y cierre,2027-04-15,2027-04-21,5,125,No crítica,379:FS,,Dependencias reconstruidas; conservar duración original.,12
+381,381,P8,N8-Entrega_,Entrega y cierre,2027-04-28,2027-04-28,0,120,No crítica,378:FS; 380:FS; 362:FS,,"Entrega de sector, no habilitación para ocupar.",12
+383,383,P9 / quincho y azotea,P9 - ET1 albañilería,Albañilería,2026-11-30,2026-12-04,5,20,No crítica,LIB:FS,,Dependencias reconstruidas; conservar duración original.,4
+384,384,P9 / quincho y azotea,P9 - ET2 premarcos y revoques,Albañilería,2027-01-20,2027-01-26,5,0,Crítica modelo,383:FS; 342:FS,,"Continúa el tren después de P8, 5 días laborables.",6
+385,385,P9 / quincho y azotea,AZ-SANIT_ET1,Sanitaria,2027-01-27,2027-02-02,5,0,Crítica modelo,384:FS,,Dependencias reconstruidas; conservar duración original.,6
+386,386,P9 / quincho y azotea,AZ-ELEC_ET2,Electricidad,2027-01-29,2027-02-04,5,0,Crítica modelo,385:SS+2,,Dependencias reconstruidas; conservar duración original.,6
+387,387,P9 / quincho y azotea,AZ-AA_ET1,Aire acondicionado,2027-02-05,2027-02-09,3,0,Crítica modelo,386:FS,,Dependencias reconstruidas; conservar duración original.,7
+388,388,P9 / quincho y azotea,AZ-RADIADORES_ET1-2,Radiadores,2027-02-05,2027-02-09,3,0,Crítica modelo,386:FS,,Dependencias reconstruidas; conservar duración original.,7
+389,389,P9 / quincho y azotea,"P9 - ET3 tapados, marcos y espacios técnicos",Albañilería,2027-02-17,2027-03-02,10,0,Crítica modelo,391:FS,,ET3 posterior al contrapiso; se mantiene duración de 10 días.,8
+390,390,P9 / quincho y azotea,AZ-AISLACION TERMICA S/ HIGROTERMIA,Impermeabilización,2027-02-10,2027-02-11,2,0,Crítica modelo,387:FS; 388:FS,,Dependencias reconstruidas; conservar duración original.,7
+391,391,P9 / quincho y azotea,AZ-CONTRAPISO DE PENDIENTE CON CARPETA,Impermeabilización,2027-02-12,2027-02-16,3,0,Crítica modelo,390:FS,,Dependencias reconstruidas; conservar duración original.,8
+392,392,P9 / quincho y azotea,AZ-IMPERMEABILIZACION (Imprimación y membrana),Impermeabilización,2027-03-03,2027-03-05,3,0,Crítica modelo,389:FS,,Dependencias reconstruidas; conservar duración original.,9
+393,393,P9 / quincho y azotea,AZ-PRUEBA HIDRAULICA,Impermeabilización,2027-03-08,2027-03-09,2,0,Crítica modelo,392:FS,,Dependencias reconstruidas; conservar duración original.,9
+394,394,General,Fin Impermeabilización Azotea,Impermeabilización,2027-03-09,2027-03-09,0,0,Crítica modelo,393:FS,,Dependencias reconstruidas; conservar duración original.,10
+395,395,P9 / quincho y azotea,AZ-TERMINACION (A DESARROLLAR PROG. SEGÚN PROYECTO),Impermeabilización,2027-03-10,2027-03-23,10,0,Crítica modelo,394:FS,,10 días conservados. Definir alcance de terminación de azotea.,10
+396,396,P9 / quincho y azotea,AZ-YES_ET1,Yesería,2027-03-24,2027-03-30,5,0,Crítica modelo,395:FS,,Dependencias reconstruidas; conservar duración original.,11
+397,397,P9 / quincho y azotea,AZ-ELEC_ET3,Electricidad,2027-03-31,2027-03-31,1,0,Crítica modelo,396:FS,,Dependencias reconstruidas; conservar duración original.,11
+398,398,P9 / quincho y azotea,AZ-AA_ET2,Aire acondicionado,2027-04-01,2027-04-01,1,0,Crítica modelo,397:FS,,Dependencias reconstruidas; conservar duración original.,12
+399,399,P9 / quincho y azotea,AZ-YES_ET2,Yesería,2027-04-02,2027-04-08,5,0,Crítica modelo,398:FS,,Dependencias reconstruidas; conservar duración original.,12
+400,400,P9 / quincho y azotea,AZ-ELEC_ET4,Electricidad,2027-04-09,2027-04-15,5,0,Crítica modelo,399:FS,,Dependencias reconstruidas; conservar duración original.,12
+401,401,P9 / quincho y azotea,AZ-REVEST&SOLADOS_ET1,Revestimientos y solados,2027-04-16,2027-04-22,5,0,Crítica modelo,400:FS,,Dependencias reconstruidas; conservar duración original.,12
+402,402,P9 / quincho y azotea,AZ-REVEST&SOLADOS_ET2,Revestimientos y solados,2027-04-23,2027-04-29,5,0,Crítica modelo,401:FS,,Dependencias reconstruidas; conservar duración original.,12
+403,403,P9 / quincho y azotea,AZ-REVEST&SOLADOS_ET3,Revestimientos y solados,2027-04-30,2027-05-06,5,0,Crítica modelo,402:FS,,Dependencias reconstruidas; conservar duración original.,12
+404,404,P9 / quincho y azotea,AZ-MARMOLERIA_ET1,Marmolería,2027-04-23,2027-04-27,3,121,No crítica,401:FS,,Dependencias reconstruidas; conservar duración original.,12
+405,405,P9 / quincho y azotea,AZ-PIN INT_ET1,Pintura interior,2027-05-07,2027-05-13,5,0,Crítica modelo,403:FS,,Dependencias reconstruidas; conservar duración original.,12
+406,406,P9 / quincho y azotea,AZ-ABERT EXT_ET2,Aberturas exteriores,2027-05-14,2027-05-20,5,0,Crítica modelo,405:FS,,Dependencias reconstruidas; conservar duración original.,12
+407,407,P9 / quincho y azotea,AZ-ELEC_ET5,Electricidad,2027-05-21,2027-05-27,5,0,Crítica modelo,406:FS,,Dependencias reconstruidas; conservar duración original.,13
+408,408,P9 / quincho y azotea,AZ-ABERT INT_ET2,Aberturas interiores,2027-05-28,2027-06-01,3,0,Crítica modelo,407:FS,,Dependencias reconstruidas; conservar duración original.,13
+409,409,P9 / quincho y azotea,AZ-EQUIP_ET1,Equipamiento,2027-06-02,2027-06-04,3,0,Crítica modelo,408:FS,,Dependencias reconstruidas; conservar duración original.,13
+410,410,P9 / quincho y azotea,AZ-REVEST&SOLADOS_ET4,Revestimientos y solados,2027-06-07,2027-06-09,3,0,Crítica modelo,409:FS,,Dependencias reconstruidas; conservar duración original.,13
+411,411,P9 / quincho y azotea,AZ-EQUIP_ET2,Equipamiento,2027-06-02,2027-06-04,3,93,No crítica,408:FS,,Dependencias reconstruidas; conservar duración original.,13
+412,412,P9 / quincho y azotea,AZ-RADIADORES_ET3,Radiadores,2027-06-02,2027-06-04,3,93,No crítica,408:FS,,Dependencias reconstruidas; conservar duración original.,13
+413,413,P9 / quincho y azotea,AZ-MARMOLERIA_ET2,Marmolería,2027-06-10,2027-06-14,3,0,Crítica modelo,410:FS,,Dependencias reconstruidas; conservar duración original.,13
+414,414,P9 / quincho y azotea,AZ-GAS_ET3,Gas,2027-06-15,2027-06-17,3,0,Crítica modelo,413:FS,,Dependencias reconstruidas; conservar duración original.,13
+415,415,P9 / quincho y azotea,AZ-SANIT_ET2,Sanitaria,2027-06-15,2027-06-17,3,0,Crítica modelo,413:FS,,Dependencias reconstruidas; conservar duración original.,13
+416,416,P9 / quincho y azotea,AZ-ZOCALOS_ET1,Zócalos,2027-06-07,2027-06-09,3,0,Crítica modelo,409:FS,,Dependencias reconstruidas; conservar duración original.,13
+417,417,P9 / quincho y azotea,AZ-PIN INT_ET2,Pintura interior,2027-06-10,2027-06-16,5,0,Crítica modelo,410:FS; 416:FS,,Dependencias reconstruidas; conservar duración original.,13
+418,418,P9 / quincho y azotea,AZ-ABER EXT_ET3,Aberturas exteriores,2027-06-17,2027-06-17,1,0,Crítica modelo,417:FS,,Dependencias reconstruidas; conservar duración original.,13
+419,419,P9 / quincho y azotea,AZ-Limpieza Final,Entrega y cierre,2027-06-18,2027-06-22,3,0,Crítica modelo,418:FS; 414:FS; 415:FS,,Dependencias reconstruidas; conservar duración original.,13
+420,420,P9 / quincho y azotea,AZ-CheckList,Entrega y cierre,2027-06-22,2027-06-22,0,76,No crítica,419:FS,,Dependencias reconstruidas; conservar duración original.,13
+421,421,P9 / quincho y azotea,AZ-Puesta a punto,Entrega y cierre,2027-06-23,2027-06-29,5,76,No crítica,420:FS,,Dependencias reconstruidas; conservar duración original.,14
+422,422,P9 / quincho y azotea,AZ-Entrega,Entrega y cierre,2027-06-29,2027-06-29,0,76,No crítica,421:FS,,Dependencias reconstruidas; conservar duración original.,14
+424,424,General,Ingreso Ascensor,Hitos generales,2027-08-10,2027-08-10,0,0,Crítica modelo,430:FS,,Ingreso de ascensor. Entrega de proveedor debe confirmar esta fecha.,14
+425,425,Comunes,EC-SANIT_ET3,Sanitaria,2027-06-18,2027-06-24,5,0,Crítica modelo,419:SS,,"Vínculo propuesto SS con limpieza final P9, reproduce el solape del original. Validar prioridad de frentes comunes.",14
+426,426,Comunes,EC-ALB_ET5,Albañilería,2027-06-25,2027-07-08,10,0,Crítica modelo,425:FS,,Dependencias reconstruidas; conservar duración original.,14
+427,427,Comunes,EC-GAS_ET2,Gas,2027-07-09,2027-07-15,5,0,Crítica modelo,426:FS,,Dependencias reconstruidas; conservar duración original.,14
+428,428,Comunes,EC-AGUA_ET3,Agua fría y caliente,2027-07-16,2027-07-22,5,0,Crítica modelo,427:FS,,Dependencias reconstruidas; conservar duración original.,14
+429,429,Comunes,EC-YESERIA_ET3,Yesería,2027-07-23,2027-07-29,5,0,Crítica modelo,428:FS,,Dependencias reconstruidas; conservar duración original.,14
+430,430,Comunes,EC-YESERIA_ET4,Yesería,2027-07-30,2027-08-10,8,0,Crítica modelo,429:FS,,Dependencias reconstruidas; conservar duración original.,14
+431,431,Comunes,EC-ASCENSOR_ET1,Ascensores,2027-08-11,2027-08-13,3,0,Crítica modelo,424:FS,,Dependencias reconstruidas; conservar duración original.,14
+432,432,Comunes,EC-ASCENSOR_ET2,Ascensores,2027-08-16,2027-08-20,5,0,Crítica modelo,431:FS,,Dependencias reconstruidas; conservar duración original.,14
+433,433,Comunes,EC-ASCENSOR_ET3,Ascensores,2027-08-23,2027-08-27,5,0,Crítica modelo,432:FS,,Dependencias reconstruidas; conservar duración original.,14
+434,434,Comunes,EC-ALB_ET6,Albañilería,2027-08-30,2027-09-03,5,0,Crítica modelo,433:FS,,Dependencias reconstruidas; conservar duración original.,14
+435,435,Comunes,EC-HERRERIA_ET1,Herrería y barandas,2027-08-11,2027-08-13,3,37,No crítica,424:FS,,Dependencias reconstruidas; conservar duración original.,14
+436,436,Comunes,EC-HERRERIA_ET2,Herrería y barandas,2027-08-16,2027-08-18,3,37,No crítica,435:FS,,Dependencias reconstruidas; conservar duración original.,14
+437,437,Comunes,EC-ELEC_ET6,Electricidad,2027-09-06,2027-09-10,5,0,Crítica modelo,434:FS,,Dependencias reconstruidas; conservar duración original.,14
+438,438,Comunes,EC-PIN INT_ET3,Pintura interior,2027-09-13,2027-09-17,5,0,Crítica modelo,437:FS,,Dependencias reconstruidas; conservar duración original.,14
+439,439,Comunes,EC-REVEST&SOL_ET6,Revestimientos y solados,2027-09-20,2027-10-01,10,0,Crítica modelo,438:FS,,Dependencias reconstruidas; conservar duración original.,14
+440,440,Comunes,EC-ASCENSOR_ET4,Ascensores,2027-10-04,2027-10-06,3,2,No crítica,439:FS,,Dependencias reconstruidas; conservar duración original.,14
+441,441,Comunes,EC-PIN INT_ET4,Pintura interior,2027-10-04,2027-10-08,5,0,Crítica modelo,439:FS,,Dependencias reconstruidas; conservar duración original.,14
+442,442,Comunes,EC-GAS_ET4,Gas,2027-10-11,2027-10-13,3,0,Crítica modelo,441:FS; 440:FS; 436:FS,,Dependencias reconstruidas; conservar duración original.,14
+444,444,General,ALB_ET4 - Medianera Este,Albañilería,2026-12-02,2027-01-19,23,168,No crítica,,2026-12-02,Retroprogramada 46 días hasta 19/02. Objetivo usuario 20/02/27 (sábado). Cuadrilla exterior independiente.,3
+445,445,General,ALB_ET4 - Medianera Norte,Albañilería,2027-01-20,2027-02-19,23,168,No crítica,444:FS,,Dependencias reconstruidas; conservar duración original.,3
+446,446,General,ALB_ET4 - Patio y Luz Este,Albañilería,2026-12-02,2026-12-22,15,199,No crítica,444:SS,,Dependencias reconstruidas; conservar duración original.,3
+447,447,General,ALB_ET4 - Patio y Luz Oeste,Albañilería,2027-01-20,2027-02-09,15,176,No crítica,445:SS,,Dependencias reconstruidas; conservar duración original.,4
+449,449,Planta baja,PB-ALB_ET1,Albañilería,2027-02-10,2027-02-16,5,74,No crítica,390:SS,,"Inicio propuesto coincidente con aislación de azotea, como en el original. Confirmar recursos independientes.",8
+450,450,Planta baja,PB-ALB_ET2,Albañilería,2027-02-17,2027-02-23,5,74,No crítica,449:FS,,Dependencias reconstruidas; conservar duración original.,8
+451,451,Planta baja,PB-GAS_ET1,Gas,2027-02-24,2027-03-02,5,74,No crítica,450:FS,,Dependencias reconstruidas; conservar duración original.,9
+452,452,Planta baja,PB-HERR_ESP,Hitos generales,2027-02-23,2027-02-23,0,166,No crítica,450:FS,,Dependencias reconstruidas; conservar duración original.,9
+453,453,Planta baja,PB-SANIT_ET1,Sanitaria,2027-02-24,2027-03-02,5,74,No crítica,450:FS,,Dependencias reconstruidas; conservar duración original.,9
+454,454,Planta baja,PB-ELEC_ET2,Electricidad,2027-02-24,2027-03-02,5,74,No crítica,450:FS,,Dependencias reconstruidas; conservar duración original.,9
+455,455,Planta baja,PB-AA_ET1,Aire acondicionado,2027-03-03,2027-03-05,3,74,No crítica,451:FS; 453:FS; 454:FS,,Dependencias reconstruidas; conservar duración original.,9
+456,456,Planta baja,PB-RADIADORES_ET1-2,Radiadores,2027-03-03,2027-03-05,3,74,No crítica,451:FS; 453:FS; 454:FS,,Dependencias reconstruidas; conservar duración original.,9
+457,457,Planta baja,"PB - ET3 tapados, marcos y espacios técnicos",Albañilería,2027-03-11,2027-03-17,5,74,No crítica,458:FS,,ET3 posterior a contrapiso; conserva duración de 5 días.,10
+458,458,Planta baja,PB-CONTRAPISO,Hitos generales,2027-03-08,2027-03-10,3,74,No crítica,455:FS; 456:FS,,Dependencias reconstruidas; conservar duración original.,10
+459,459,Planta baja,PB-YES_ET1,Yesería,2027-03-18,2027-03-24,5,74,No crítica,457:FS,,Dependencias reconstruidas; conservar duración original.,11
+460,460,Planta baja,PB-ELEC_ET3,Electricidad,2027-03-25,2027-03-25,1,74,No crítica,459:FS,,Dependencias reconstruidas; conservar duración original.,11
+461,461,Planta baja,PB-AA_ET2,Aire acondicionado,2027-03-25,2027-03-25,1,74,No crítica,459:FS,,Dependencias reconstruidas; conservar duración original.,11
+462,462,Planta baja,PB-YES_ET2,Yesería,2027-03-25,2027-03-31,5,74,No crítica,460:SS; 461:SS,,Dependencias reconstruidas; conservar duración original.,12
+463,463,Planta baja,PB-ELEC_ET4,Electricidad,2027-04-01,2027-04-07,5,74,No crítica,462:FS,,Dependencias reconstruidas; conservar duración original.,12
+464,464,Planta baja,PB-REVEST&SOLADOS_ET1,Revestimientos y solados,2027-04-08,2027-04-14,5,74,No crítica,463:FS,,Dependencias reconstruidas; conservar duración original.,12
+465,465,Planta baja,PB-REVEST&SOLADOS_ET2,Revestimientos y solados,2027-04-15,2027-04-21,5,74,No crítica,464:FS,,Dependencias reconstruidas; conservar duración original.,12
+466,466,Planta baja,PB-REVEST&SOLADOS_ET3,Revestimientos y solados,2027-04-22,2027-04-28,5,74,No crítica,465:FS,,Dependencias reconstruidas; conservar duración original.,12
+467,467,Planta baja,PB-REVEST&SOLADOS_ET7,Revestimientos y solados,2027-04-29,2027-05-05,5,74,No crítica,466:FS,,Dependencias reconstruidas; conservar duración original.,12
+468,468,Planta baja,PB-MARMOLERIA_ET1,Marmolería,2027-04-15,2027-04-19,3,127,No crítica,464:FS,,Dependencias reconstruidas; conservar duración original.,12
+469,469,Planta baja,PB-PIN INT_ET1,Pintura interior,2027-05-06,2027-05-12,5,74,No crítica,467:FS,,Dependencias reconstruidas; conservar duración original.,12
+470,470,Planta baja,PB-ABERT EXT_ET2,Aberturas exteriores,2027-05-13,2027-05-19,5,74,No crítica,469:FS,,Dependencias reconstruidas; conservar duración original.,12
+471,471,Planta baja,PB-VIDRIOS_ESP,Vidrios y espejos,2027-05-20,2027-05-26,5,78,No crítica,470:FS,,Dependencias reconstruidas; conservar duración original.,13
+472,472,Planta baja,PB-ELEC_ET5,Electricidad,2027-05-20,2027-05-26,5,75,No crítica,470:FS,,Dependencias reconstruidas; conservar duración original.,13
+473,473,Planta baja,PB-ABERT INT_ET2,Aberturas interiores,2027-05-27,2027-05-31,3,75,No crítica,472:FS,,Dependencias reconstruidas; conservar duración original.,13
+474,474,Planta baja,PB-EQUIP_ET1,Equipamiento,2027-05-20,2027-05-24,3,74,No crítica,470:FS,,Dependencias reconstruidas; conservar duración original.,13
+475,475,Planta baja,PB-REVEST&SOLADOS_ET4,Revestimientos y solados,2027-05-25,2027-05-27,3,74,No crítica,474:FS,,Dependencias reconstruidas; conservar duración original.,13
+476,476,Planta baja,PB-EQUIP_ET2,Equipamiento,2027-05-25,2027-05-27,3,74,No crítica,474:FS,,Dependencias reconstruidas; conservar duración original.,13
+477,477,Planta baja,PB-RADIADORES_ET3,Radiadores,2027-05-13,2027-05-17,3,85,No crítica,470:SS,,Dependencias reconstruidas; conservar duración original.,13
+478,478,Planta baja,PB-MARMOLERIA_ET2,Marmolería,2027-05-28,2027-06-01,3,74,No crítica,475:FS; 476:FS,,Dependencias reconstruidas; conservar duración original.,13
+479,479,Planta baja,PB-GAS_ET3,Gas,2027-05-28,2027-06-01,3,74,No crítica,475:FS; 476:FS,,Dependencias reconstruidas; conservar duración original.,13
+480,480,Planta baja,PB-SANIT_ET2,Sanitaria,2027-05-28,2027-06-01,3,74,No crítica,475:FS; 476:FS,,Dependencias reconstruidas; conservar duración original.,13
+481,481,Planta baja,PB-ZOCALOS_ET1,Zócalos,2027-05-28,2027-06-01,3,74,No crítica,475:FS; 476:FS,,Dependencias reconstruidas; conservar duración original.,13
+482,482,Planta baja,PB-PIN INT_ET2,Pintura interior,2027-06-02,2027-06-08,5,74,No crítica,478:FS; 479:FS; 480:FS; 481:FS; 473:FS; 471:FS; 477:FS,,Dependencias reconstruidas; conservar duración original.,13
+483,483,Planta baja,PB-ABER EXT_ET3,Aberturas exteriores,2027-06-09,2027-06-09,1,74,No crítica,482:FS,,Dependencias reconstruidas; conservar duración original.,13
+484,484,Planta baja,PB-Desarme de cerco de obra,Albañilería,2027-06-10,2027-06-10,1,74,No crítica,483:FS,,Dependencias reconstruidas; conservar duración original.,13
+485,485,Planta baja,PB-Retoques finales (sector desarme cerco de obra),Albañilería,2027-06-11,2027-06-14,2,74,No crítica,484:FS,,Dependencias reconstruidas; conservar duración original.,13
+486,486,Planta baja,PB-REVEST&SOLADOS,Revestimientos y solados,2027-06-15,2027-06-21,5,74,No crítica,485:FS,,Dependencias reconstruidas; conservar duración original.,14
+487,487,Planta baja,PB-Limpieza Final,Entrega y cierre,2027-06-22,2027-06-24,3,74,No crítica,486:FS,,Dependencias reconstruidas; conservar duración original.,14
+488,488,Planta baja,PB-CheckList,Entrega y cierre,2027-06-24,2027-06-24,0,74,No crítica,487:FS,,Dependencias reconstruidas; conservar duración original.,14
+489,489,Planta baja,PB-Puesta a punto,Entrega y cierre,2027-06-25,2027-07-01,5,74,No crítica,488:FS,,Dependencias reconstruidas; conservar duración original.,14
+490,490,Planta baja,Entrega general y planta baja,Entrega y cierre,2027-10-13,2027-10-13,0,0,Crítica modelo,489:FS; 442:FS; 422:FS; 445:FS; 447:FS; 83:FS; 125:FS; 167:FS; 213:FS; 255:FS; 297:FS; 339:FS; 381:FS,,"Fin calculado del modelo reconstruido, sujeto a supuestos y calendario. No incluye trámites de habilitación no informados.",14
+H16,10001,Estructura,Hormigonado azotea y sala de máquinas,Estructura y preliminares,2026-11-16,2026-11-16,0,29,No crítica,,2026-11-17,Fecha fijada por Marcelo. No equivale a liberación para trabajar.,3
+L1,10002,P1,P1 - Instalaciones liberadas para contrapiso,Liberación de instalaciones,2026-11-13,2026-11-13,0,155,No crítica,,2026-11-16,"Fecha propuesta; confirmar avance real. Agrupa gas, sanitarias, electricidad, AA y calefacción. Inicio real y saldo no informados.",3
+L2,10003,P2,P2 - Instalaciones liberadas para contrapiso,Liberación de instalaciones,2026-11-20,2026-11-20,0,150,No crítica,,2026-11-23,"Fecha propuesta; confirmar avance real. Agrupa gas, sanitarias, electricidad, AA y calefacción. Inicio real y saldo no informados.",3
+L3,10004,P3,P3 - Instalaciones liberadas para contrapiso,Liberación de instalaciones,2026-11-27,2026-11-27,0,145,No crítica,,2026-11-30,"Fecha propuesta; confirmar avance real. Agrupa gas, sanitarias, electricidad, AA y calefacción. Inicio real y saldo no informados.",3
+L4,10005,P4,P4 - Instalaciones liberadas para contrapiso,Liberación de instalaciones,2026-12-04,2026-12-04,0,140,No crítica,,2026-12-07,"Fecha propuesta; confirmar avance real. Agrupa gas, sanitarias, electricidad, AA y calefacción. Inicio real y saldo no informados.",3
+L5,10006,P5,P5 - Instalaciones liberadas para contrapiso,Liberación de instalaciones,2026-11-27,2026-11-27,0,145,No crítica,,2026-11-30,"Compromiso del usuario para P5/P6. Agrupa gas, sanitarias, electricidad, AA y calefacción. Inicio real y saldo no informados.",3
+L6,10007,P6,P6 - Instalaciones liberadas para contrapiso,Liberación de instalaciones,2026-11-27,2026-11-27,0,145,No crítica,,2026-11-30,"Compromiso del usuario para P5/P6. Agrupa gas, sanitarias, electricidad, AA y calefacción. Inicio real y saldo no informados.",3
+L7,10008,P7,P7 - Instalaciones liberadas para contrapiso,Liberación de instalaciones,2026-12-11,2026-12-11,0,135,No crítica,,2026-12-14,"Fecha propuesta; confirmar avance real. Agrupa gas, sanitarias, electricidad, AA y calefacción. Inicio real y saldo no informados.",3
+L8,10009,P8,P8 - Instalaciones liberadas para contrapiso,Liberación de instalaciones,2026-12-18,2026-12-18,0,130,No crítica,,2026-12-21,"Fecha propuesta; confirmar avance real. Agrupa gas, sanitarias, electricidad, AA y calefacción. Inicio real y saldo no informados.",3
+LIB,10010,P9 / quincho y azotea,Liberación de frente P9 por Dirección de Obra,Liberación de frentes,2026-11-30,2026-11-30,0,20,No crítica,H16:FS,2026-11-30,SUPUESTO de programación: frente disponible el 30/11/26 al inicio del día. No es plazo técnico de curado; validar con DO.,3

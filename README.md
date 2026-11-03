@@ -2,13 +2,13 @@
 
 Aplicación web adaptable a celular, tableta y escritorio, con identidad de Oddino Arquitectura. Portada visual con semáforos grandes, atención priorizada, cobertura de partes y tarjetas de rubros. Los filtros y las referencias del plan se despliegan bajo “Filtros y referencia del plan”. Semáforo por rubro, carga manual de avances por actividad/nivel, seguimiento histórico de restricciones y programación documental trazable a los nueve PDF.
 
-## Programación vigente R2
+## Programación vigente R3 y compromisos LPS
 
-Leer [la programación y sus criterios](docs/PROGRAMACION.md). El PDF `Jujuy_Programacion_completa_revisada.pdf` es la fuente vigente: 395 actividades e hitos, desde el 09/11/2026 al 13/10/2027. El calendario excluye vacaciones del 24/12/2026 al 10/01/2027 inclusive, con reinicio el 11/01. Otros feriados no se descuentan.
+Leer [criterios y resultados](docs/PROGRAMACION.md). R3 recalcula la red de 395 actividades de R2 por el **09/11/2026 no laborable**, confirmado por el usuario. Antes del ajuste el motor reproduce exactamente todas las fechas, índices y holguras R2. Plan remanente **10/11/2026–14/10/2027**, conservando duraciones, vínculos FS/SS, lag SS+2 y compromisos fijos. Se mantienen vacaciones 24/12/2026–10/01/2027. Contrapisos P5/P6: 27/11/2026; medianeras: 19/02/2027.
 
-Se conservan A0 y R1 por separado. Los 491 IDs originales permanecen y se agregan diez IDs nuevos para H16, LIB y L1–L8. Las 106 filas no activas se conservan con su trazabilidad; las actividades productivas anteriores se consultan desde Programación → Historial fuera de R2. Los partes y restricciones locales no se borran ni se transfieren automáticamente a los nuevos hitos agregados.
+La vista **LPS** muestra 20 compromisos de noviembre, todavía sin cumplimiento ni PPC calculable. Correcciones confirmadas: ET1 hasta P8 fin previsto 10/11; SH+T sala de máquinas y tanques; SAN-02 inspección ocular de gas. Las lecturas pendientes se señalan y las fotos originales no se publican.
 
-El antecedente de bombeo P3/P4 del 30/10/2026 se conserva por separado: no completa automáticamente los hitos de contrapiso terminado que R2 programa para 27/11 y 04/12. Las condiciones y supuestos del PDF continúan visibles. [CSV vigente](docs/programacion.csv).
+A0, R1 y R2 se conservan aparte. Los 501 IDs internos y los partes/restricciones locales permanecen compatibles. Las 106 filas no activas incluyen 68 actividades productivas anteriores consultables desde Programación → Historial fuera del plan. No se transfieren porcentajes a los hitos nuevos ni se toman promesas LPS como ejecución. [CSV vigente](docs/programacion.csv) · [Gantt R3 PDF](docs/Jujuy_Programacion_R3_LPS.pdf).
 
 ## Iniciar en el entorno
 
@@ -26,7 +26,7 @@ cd /workspace/Programacion-Jujuy
 npm test
 ```
 
-Trece pruebas del cálculo, históricos, calendario R2, integridad del plan y conservación de partes. Las pruebas de navegador están en `tests/browser_smoke.py`, `tests/home_smoke.py` (portada visual) y `tests/update_smoke.py` (actualización conservando partes): requieren Python Playwright y Chromium ya instalados, servidor activo y permiso de acceso a loopback. Ejecutar `python3 tests/browser_smoke.py`; opcionalmente indicar `JUJUY_TEST_URL`, `CHROMIUM_PATH` y `JUJUY_TEST_ARTIFACTS`. Usan perfiles temporales y no modifican partes de usuarios reales.
+Dieciséis pruebas del cálculo, históricos, calendarios R2/R3, red de dependencias, compromisos LPS y conservación de partes. Las pruebas de navegador están en `tests/browser_smoke.py`, `tests/home_smoke.py` (portada visual), `tests/lps_smoke.py` (promesas y filtros semanales) y `tests/update_smoke.py` (actualización conservando partes): requieren Python Playwright y Chromium ya instalados, servidor activo y permiso de acceso a loopback. Ejecutar `python3 tests/browser_smoke.py`; opcionalmente indicar `JUJUY_TEST_URL`, `CHROMIUM_PATH` y `JUJUY_TEST_ARTIFACTS`. Usan perfiles temporales y no modifican partes de usuarios reales.
 
 ## Usar el tablero
 
@@ -35,7 +35,7 @@ Trece pruebas del cálculo, históricos, calendario R2, integridad del plan y co
 3. Registrar restricciones con causa, categoría, responsable y fecha compromiso. Resolver con su fecha real; el historial sigue disponible.
 4. Exportar un respaldo JSON periódicamente. Restaurarlo permite trasladar el seguimiento a otro dispositivo, reemplazando la información local con confirmación. El CSV de corte sirve para informes, no para restauración.
 
-**Verde:** parte al nivel del plan. **Rojo:** avance menor al esperado. **Ámbar:** restricción vigente. **Gris:** sin parte o programado. Sin parte no equivale a cero avance. Las vacaciones de R2 no generan avance esperado. La prioridad por rubro es restricción, atraso, sin parte, en plan, programado. El promedio se pondera por duración, no por costo ni cantidades físicas.
+**Verde:** parte al nivel del plan. **Rojo:** avance menor al esperado. **Ámbar:** restricción vigente. **Gris:** sin parte o programado. Sin parte no equivale a cero avance. El 9/11 no laborable y las vacaciones no generan avance esperado. La prioridad por rubro es restricción, atraso, sin parte, en plan, programado. El promedio se pondera por duración, no por costo ni cantidades físicas.
 
 ## Celular y tableta
 
@@ -47,16 +47,19 @@ Una vez alojada, abrir el sitio desde el dispositivo y usar «Instalar aplicaci�
 
 Los partes y restricciones permanecen en el navegador/dispositivo, mediante `localStorage`. No hay cuentas ni sincronización entre celular y tableta. Borrar los datos del sitio o usar navegación privada puede perder el seguimiento. La copia JSON es el mecanismo de resguardo y traslado; no se deben mezclar dos copias como si hubiera sincronización.
 
-No se calculan automáticamente predecesoras, ruta crítica, feriados, productividad ni impacto de restricciones en fechas. Las fichas son referencia de aceptación y no equivalen automáticamente a los números de etapa del cronograma. Revisar las observaciones de `docs/PROGRAMACION.md` con la jefatura antes de adoptar el plan.
+Agregar restricciones en la interfaz no recalcula automáticamente la red. R3 se generó mediante un cálculo explícito de los vínculos del PDF R2 y de las exclusiones confirmadas; no se inventan productividad ni feriados adicionales. Las fichas son referencia de aceptación y no equivalen automáticamente a los números de etapa del cronograma. Revisar las observaciones de `docs/PROGRAMACION.md` con la jefatura antes de adoptar el plan.
 
 ## Archivos
 
 - `index.html`, `app.js`, `styles.css`: interfaz.
 - `assets/oddino-logo.svg`: logo original de la web oficial; fuente documentada en `assets/README.md`.
 - `model.js`: calendario, cortes históricos, semáforo, validación y exportación.
-- `data/schedule.json`: plan R2, calendario, IDs activos y archivados, vínculos y páginas de fuente.
+- `data/schedule.json`: plan R3, calendario, IDs activos/archivados, red, fechas R2 de comparación y compromisos LPS.
+- `data/schedule-r2.json`: base R2 intacta.
+- `data/lps-noviembre-2026.json`: transcripción LPS confirmada y lecturas pendientes.
+- `scripts/replan_lps.py`: motor R3 y generación del PDF (ReportLab + DejaVu Sans, sólo para regenerar).
 - `data/schedule-r1.json`: histórico R1 inalterado.
-- `scripts/import_r2.py`: importación repetible del PDF R2, con cotejo y validación de duraciones.
+- `scripts/import_r2.py`: importador histórico R2; no usar para actualizar directamente R3.
 - `data/schedule-a0.json`: plan A0 inalterado.
 - `scripts/reprogram.py`: generador histórico de R1; no usar para actualizar R2.
 - `docs/`: PDF originales, programación y CSV.
